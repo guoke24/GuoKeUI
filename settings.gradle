@@ -1,0 +1,3 @@
+rootProject.name='GuokeUIProj'
+include ':app'
+include ':guokeui'
