@@ -11,8 +11,12 @@ class GuokeUIMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.guokeui_activity_main)
-        btn_begin.setOnClickListener({
+        btn_quanquan.setOnClickListener({
             v -> startActivity(Intent(this, TestUIActivity::class.java))
         })
+
+        btn_Gradient.setOnClickListener {
+            startActivity(Intent(this, TestShaderActivity::class.java))
+        }
     }
 }
