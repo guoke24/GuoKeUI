@@ -18,5 +18,9 @@ class GuokeUIMainActivity : AppCompatActivity() {
         btn_Gradient.setOnClickListener {
             startActivity(Intent(this, TestShaderActivity::class.java))
         }
+
+        btn_Marquee.setOnClickListener {
+            startActivity(Intent(this, TestMarqueeActivity::class.java))
+        }
     }
 }

@@ -3,7 +3,8 @@
     package="com.guohao.guokeuiproj">
 
     <application>
-        <activity android:name="com.guohao.guokeui.TestShaderActivity"></activity>
+        <activity android:name="com.guohao.guokeui.TestMarqueeActivity"></activity>
+        <activity android:name="com.guohao.guokeui.TestShaderActivity" />
         <activity android:name="com.guohao.guokeui.TestUIActivity" />
         <activity android:name="com.guohao.guokeui.GuokeUIMainActivity" />
     </application>
