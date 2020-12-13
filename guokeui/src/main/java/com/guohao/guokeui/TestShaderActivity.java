@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.guohao.guokeuiproj.R;
+import com.guohao.guokeui.R;
 
 public class TestShaderActivity extends AppCompatActivity {
 

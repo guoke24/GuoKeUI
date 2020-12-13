@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.guohao.guokeui.view.ImageVIewWithStrok;
-import com.guohao.guokeuiproj.R;
+import com.guohao.guokeui.R;
 
 public class TestUIActivity extends AppCompatActivity {
 

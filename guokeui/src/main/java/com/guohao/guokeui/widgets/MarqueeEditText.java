@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 
 import com.guohao.guokeui.observer.KeyboardChangeObserver;
 import com.guohao.guokeui.view.MarqueeView2;
-import com.guohao.guokeuiproj.R;
+import com.guohao.guokeui.R;
 
 /**
  * 基于 MarqueeView2 和 EditText 实现的，带跑马灯效果的编辑框

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.guohao.guokeuiproj">
+    package="com.guohao.guokeui">
 
     <application>
-        <activity android:name="com.guohao.guokeui.TestMarqueeActivity"></activity>
-        <activity android:name="com.guohao.guokeui.TestShaderActivity" />
-        <activity android:name="com.guohao.guokeui.TestUIActivity" />
-        <activity android:name="com.guohao.guokeui.GuokeUIMainActivity" />
+        <activity android:name=".TestMarqueeActivity" />
+        <activity android:name=".TestShaderActivity" />
+        <activity android:name=".TestUIActivity" />
+        <activity android:name=".GuokeUIMainActivity" />
     </application>
 
 </manifest>

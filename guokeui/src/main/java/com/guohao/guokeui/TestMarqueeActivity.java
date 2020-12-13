@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.guohao.guokeui.view.MarqueeView2;
-import com.guohao.guokeuiproj.R;
+import com.guohao.guokeui.R;
 
 public class TestMarqueeActivity extends AppCompatActivity {
 

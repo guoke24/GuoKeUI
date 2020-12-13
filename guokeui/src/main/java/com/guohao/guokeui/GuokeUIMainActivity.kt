@@ -3,7 +3,7 @@ package com.guohao.guokeui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.guohao.guokeuiproj.R
+import com.guohao.guokeui.R
 import kotlinx.android.synthetic.main.guokeui_activity_main.*
 
 class GuokeUIMainActivity : AppCompatActivity() {
