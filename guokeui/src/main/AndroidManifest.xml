@@ -5,7 +5,7 @@
     <application>
         <activity android:name=".TestMarqueeActivity" />
         <activity android:name=".TestShaderActivity" />
-        <activity android:name=".TestUIActivity" />
+        <activity android:name=".TestStrokMoveActivity" />
         <activity android:name=".GuokeUIMainActivity" />
     </application>
 

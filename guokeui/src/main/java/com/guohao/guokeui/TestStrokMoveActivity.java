@@ -8,7 +8,7 @@ import android.widget.Button;
 import com.guohao.guokeui.view.ImageVIewWithStrok;
 import com.guohao.guokeui.R;
 
-public class TestUIActivity extends AppCompatActivity {
+public class TestStrokMoveActivity extends AppCompatActivity {
 
     ImageVIewWithStrok imageVIewWithStrok;
     Button btnMove;
