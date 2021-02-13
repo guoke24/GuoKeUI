@@ -24,7 +24,7 @@ android {
     }
 
     //限制资源名称
-    resourcePrefix "guokeui_"
+    //resourcePrefix "guokeui_"
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
