@@ -38,6 +38,10 @@ import com.guohao.guokeui.R;
 /**
  * Abstract spinner spinnerwheel view.
  * This class should be subclassed.
+ *
+ * 增加了一些样式的默认值，如透明度，边距等；
+ * 增肌了动画的处理；
+ *
  */
 public abstract class AbstractWheelView extends AbstractWheel {
 

@@ -48,6 +48,18 @@ import java.util.List;
 /**
  * Abstract spinner spinnerwheel view.
  * This class should be subclassed.
+ *
+ * 该顶层父类，定义了：
+ *
+ * 滚动相关逻辑：配合 scroller 计算偏移量，滚动状态的回调，选中栏的计算；
+ * 子item的重建，新增，回收复用，逻辑；
+ * 子item的测量，布局，绘制时机的控制；
+ *
+ * 特别注意：
+ * 可见的 items 会被添加到 itemsLayout 这个 LinearLayout，
+ * 为此封装了一个 ItemsRange 类，用于标记可见 items 的区间，
+ * 映射 items 的列表，采用环形列表逻辑的下标计算，可以有负数。
+ *
  */
 public abstract class AbstractWheel extends View {
 

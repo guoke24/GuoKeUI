@@ -38,6 +38,12 @@ import com.guohao.guokeui.R;
 
 /**
  * Spinner wheel vertical view.
+ *
+ * 垂直滚轮的具体实现；
+ * 具体实现了 测量，布局，绘制，获取 item 高度等逻辑；
+ * 实现了着色器的渐变逻辑；
+ * 根据偏移量绘制，和父类的重建可见items，来实现滚动效果；
+ *
  */
 public class WheelVerticalView extends AbstractWheelView {
 
