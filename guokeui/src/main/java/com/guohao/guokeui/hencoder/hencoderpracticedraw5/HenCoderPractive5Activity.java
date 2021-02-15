@@ -1,4 +1,4 @@
-package com.guohao.guokeui.hencoder.hencoderpracticedraw4;
+package com.guohao.guokeui.hencoder.hencoderpracticedraw5;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,31 +9,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.tabs.TabLayout;
-import java.util.ArrayList;
-import java.util.List;
 import com.guohao.guokeui.R;
 
-public class HenCoderPractive4MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class HenCoderPractive5Activity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager pager;
     List<PageModel> pageModels = new ArrayList<>();
 
     {
-        pageModels.add(new PageModel(R.layout.sample_clip_rect, R.string.title_clip_rect, R.layout.sample_clip_rect));
-        pageModels.add(new PageModel(R.layout.sample_clip_path, R.string.title_clip_path, R.layout.sample_clip_path));
-        pageModels.add(new PageModel(R.layout.sample_translate, R.string.title_translate, R.layout.sample_translate));
-        pageModels.add(new PageModel(R.layout.sample_scale, R.string.title_scale, R.layout.sample_scale));
-        pageModels.add(new PageModel(R.layout.sample_rotate, R.string.title_rotate, R.layout.sample_rotate));
-        pageModels.add(new PageModel(R.layout.sample_skew, R.string.title_skew, R.layout.sample_skew));
-        pageModels.add(new PageModel(R.layout.sample_matrix_translate, R.string.title_matrix_translate, R.layout.sample_matrix_translate));
-        pageModels.add(new PageModel(R.layout.sample_matrix_scale, R.string.title_matrix_scale, R.layout.sample_matrix_scale));
-        pageModels.add(new PageModel(R.layout.sample_matrix_rotate, R.string.title_matrix_rotate, R.layout.sample_matrix_rotate));
-        pageModels.add(new PageModel(R.layout.sample_matrix_skew, R.string.title_matrix_skew, R.layout.sample_matrix_skew));
-        pageModels.add(new PageModel(R.layout.sample_camera_rotate, R.string.title_camera_rotate, R.layout.sample_camera_rotate));
-        pageModels.add(new PageModel(R.layout.sample_camera_rotate_fixed, R.string.title_camera_rotate_fixed, R.layout.sample_camera_rotate_fixed));
-        pageModels.add(new PageModel(R.layout.sample_camera_rotate_hitting_face, R.string.title_camera_rotate_hitting_face, R.layout.practice_camera_rotate_hitting_face));
-        pageModels.add(new PageModel(R.layout.sample_flipboard, R.string.title_flipboard, R.layout.sample_flipboard));
+        pageModels.add(new PageModel(R.layout.sample_after_on_draw, R.string.title_after_on_draw, R.layout.practice_after_on_draw));
+        pageModels.add(new PageModel(R.layout.sample_before_on_draw, R.string.title_before_on_draw, R.layout.practice_before_on_draw));
+        pageModels.add(new PageModel(R.layout.sample_on_draw_layout, R.string.title_on_draw_layout, R.layout.practice_on_draw_layout));
+        pageModels.add(new PageModel(R.layout.sample_dispatch_draw, R.string.title_dispatch_draw, R.layout.practice_dispatch_draw));
+        pageModels.add(new PageModel(R.layout.sample_after_on_draw_foreground, R.string.title_after_on_draw_foreground, R.layout.practice_after_on_draw_foreground));
+        pageModels.add(new PageModel(R.layout.sample_before_on_draw_foreground, R.string.title_before_on_draw_foreground, R.layout.practice_before_on_draw_foreground));
+        pageModels.add(new PageModel(R.layout.sample_after_draw, R.string.title_after_draw, R.layout.practice_after_draw));
+        pageModels.add(new PageModel(R.layout.sample_before_draw, R.string.title_before_draw, R.layout.practice_before_draw));
     }
 
     @Override

@@ -105,7 +105,37 @@
         android:layout_marginTop="8dp"
         />
 
+    <Button
+        android:id="@+id/btn_hencode5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hencoder_draw_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hencode4"
+        android:layout_marginTop="8dp"
+        />
 
+    <Button
+        android:id="@+id/btn_hencode6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hencoder_draw_6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hencode5"
+        android:layout_marginTop="8dp"
+        />
 
+    <Button
+        android:id="@+id/btn_hencode7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hencoder_draw_7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hencode6"
+        android:layout_marginTop="8dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

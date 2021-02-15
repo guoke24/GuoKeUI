@@ -3,13 +3,13 @@ package com.guohao.guokeui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import androidx.fragment.app.FragmentTransaction
-import com.guohao.guokeui.hencoder.hencoderpracticedraw1.MainActivity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw1.HenCoderPractive1Activity
 import com.guohao.guokeui.hencoder.hencoderpracticedraw2.HenCoderPractive2Activity
 import com.guohao.guokeui.hencoder.hencoderpracticedraw3.HenCoderPractive3Activity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4MainActivity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4Activity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw5.HenCoderPractive5Activity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw6.HenCoderPractive6Activity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw7.HenCoderPractive7Activity
 import kotlinx.android.synthetic.main.guokeui_activity_main.*
 
 class GuokeUIMainActivity : AppCompatActivity() {
@@ -60,7 +60,7 @@ class GuokeUIMainActivity : AppCompatActivity() {
         }
 
         btn_hencode1.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, HenCoderPractive1Activity::class.java))
         }
 
         btn_hencode2.setOnClickListener {
@@ -72,7 +72,19 @@ class GuokeUIMainActivity : AppCompatActivity() {
         }
 
         btn_hencode4.setOnClickListener {
-            startActivity(Intent(this, HenCoderPractive4MainActivity::class.java))
+            startActivity(Intent(this, HenCoderPractive4Activity::class.java))
+        }
+
+        btn_hencode5.setOnClickListener {
+            startActivity(Intent(this, HenCoderPractive5Activity::class.java))
+        }
+
+        btn_hencode6.setOnClickListener {
+            startActivity(Intent(this, HenCoderPractive6Activity::class.java))
+        }
+
+        btn_hencode7.setOnClickListener {
+            startActivity(Intent(this, HenCoderPractive7Activity::class.java))
         }
 
     }
