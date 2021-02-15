@@ -12,6 +12,38 @@
     <string name="title_draw_histogram">直方图</string>
     <string name="title_draw_pie_chart">饼图</string>
 
+    <string name="hencoder_draw_2">HenCoder 绘制 2</string>
+    <string name="title_linear_gradient">LinearGradient</string>
+    <string name="title_radial_gradient">RadialGradient</string>
+    <string name="title_sweep_gradient">SweepGradient</string>
+    <string name="title_bitmap_shader">BitmapShader</string>
+    <string name="title_compose_shader">ComposeShader</string>
+    <string name="title_lighting_color_filter">LightingColorFilter</string>
+    <string name="title_color_matrix_color_filter">ColorMatrixColorFilter</string>
+    <string name="title_xfermode">setXfermode()</string>
+    <string name="title_stroke_cap">setStrokeCap()</string>
+    <string name="title_stroke_join">setStrokeJoin()</string>
+    <string name="title_stroke_miter">setStrokeMiter()</string>
+    <string name="title_path_effect">setPathEffect()</string>
+    <string name="title_shader_layer">setShadowLayer()</string>
+    <string name="title_mask_filter">setMaskFilter()</string>
+
+    <string name="hencoder_draw_3">HenCoder 绘制 3</string>
+    <string name="title_draw_text">drawText()</string>
+    <string name="title_static_layout">StaticLayout</string>
+    <string name="title_set_text_size">setTextSize()</string>
+    <string name="title_set_typeface">setTypeface()</string>
+    <string name="title_set_fake_bold_text">setFakeBoldText()</string>
+    <string name="title_set_strike_thru_text">setStrikeThruText()</string>
+    <string name="title_set_underline_text">setUnderlineText()</string>
+    <string name="title_set_text_skew_x">setTextSkewX()</string>
+    <string name="title_set_text_scale_x">setTextScaleX()</string>
+    <string name="title_set_text_align">setTextAlign()</string>
+    <string name="title_get_font_spacing">getFontSpacing()</string>
+    <string name="title_measure_text">measureText()</string>
+    <string name="title_get_text_bounds">getTextBounds()</string>
+    <string name="title_get_font_metrics">getFontMetrics()</string>
+
     <string name="hencoder_draw_4">HenCoder 绘制 4</string>
     <string name="title_clip_rect">clipRect()</string>
     <string name="title_clip_path">clipPath()</string>

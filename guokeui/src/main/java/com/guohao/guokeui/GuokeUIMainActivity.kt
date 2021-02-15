@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
 import com.guohao.guokeui.hencoder.hencoderpracticedraw1.MainActivity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw2.HenCoderPractive2Activity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw3.HenCoderPractive3Activity
 import com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4MainActivity
 import kotlinx.android.synthetic.main.guokeui_activity_main.*
 
@@ -59,6 +61,14 @@ class GuokeUIMainActivity : AppCompatActivity() {
 
         btn_hencode1.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        btn_hencode2.setOnClickListener {
+            startActivity(Intent(this, HenCoderPractive2Activity::class.java))
+        }
+
+        btn_hencode3.setOnClickListener {
+            startActivity(Intent(this, HenCoderPractive3Activity::class.java))
         }
 
         btn_hencode4.setOnClickListener {

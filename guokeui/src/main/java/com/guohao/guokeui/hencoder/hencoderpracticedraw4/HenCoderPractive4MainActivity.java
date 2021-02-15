@@ -39,7 +39,7 @@ public class HenCoderPractive4MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hencoderpractivedraw1_main);
+        setContentView(R.layout.activity_hencoderpractivedraw_main);
 
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {

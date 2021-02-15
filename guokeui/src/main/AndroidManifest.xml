@@ -10,6 +10,8 @@
         <activity android:name=".GuokeUIMainActivity" />
         <activity android:name=".TestTimerSpinnerActivity" />
         <activity android:name="com.guohao.guokeui.hencoder.hencoderpracticedraw1.MainActivity" />
+        <activity android:name="com.guohao.guokeui.hencoder.hencoderpracticedraw2.HenCoderPractive2Activity" />
+        <activity android:name="com.guohao.guokeui.hencoder.hencoderpracticedraw3.HenCoderPractive3Activity" />
         <activity android:name="com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4MainActivity" />
     </application>
 
