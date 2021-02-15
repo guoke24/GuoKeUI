@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
+import com.guohao.guokeui.hencoder.hencoderpracticedraw1.MainActivity
+import com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4MainActivity
 import kotlinx.android.synthetic.main.guokeui_activity_main.*
 
 class GuokeUIMainActivity : AppCompatActivity() {
@@ -50,5 +52,18 @@ class GuokeUIMainActivity : AppCompatActivity() {
         btn_TimeSpinner.setOnClickListener {
             startActivity(Intent(this, TestTimerSpinnerActivity::class.java))
         }
+
+        btn_draw.setOnClickListener {
+            startActivity(Intent(this, TestDrawActivity::class.java))
+        }
+
+        btn_hencode1.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        btn_hencode4.setOnClickListener {
+            startActivity(Intent(this, HenCoderPractive4MainActivity::class.java))
+        }
+
     }
 }

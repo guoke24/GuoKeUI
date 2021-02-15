@@ -3,11 +3,14 @@
     package="com.guohao.guokeui">
 
     <application>
+        <activity android:name=".TestDrawActivity"></activity>
         <activity android:name=".TestMarqueeActivity" />
         <activity android:name=".TestShaderActivity" />
         <activity android:name=".TestStrokMoveActivity" />
         <activity android:name=".GuokeUIMainActivity" />
         <activity android:name=".TestTimerSpinnerActivity" />
+        <activity android:name="com.guohao.guokeui.hencoder.hencoderpracticedraw1.MainActivity" />
+        <activity android:name="com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4MainActivity" />
     </application>
 
 </manifest>
