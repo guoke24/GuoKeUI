@@ -6,12 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.guohao.guokeui.TestShaderActivity">
 
+    <Button
+        android:id="@+id/btn_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="动/停"
+        android:onClick="switchMove"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_move"
         >
 
         <LinearLayout
@@ -21,8 +33,9 @@
             >
 
             <com.guohao.guokeui.view.ViewForGradientMove
+                android:id="@+id/view_gradient_move"
                 android:layout_width="match_parent"
-                android:layout_height="2000dp"
+                android:layout_height="1500dp"
                 />
 
         </LinearLayout>

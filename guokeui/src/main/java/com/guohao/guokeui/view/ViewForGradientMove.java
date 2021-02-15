@@ -18,6 +18,9 @@ import androidx.annotation.Nullable;
  * ViewForGradient 动起来的版本
  */
 public class ViewForGradientMove extends View {
+
+    private volatile boolean isMove = false;
+
     public ViewForGradientMove(Context context) {
         super(context);
         init();
@@ -56,7 +59,7 @@ public class ViewForGradientMove extends View {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                postInvalidate();
+                if(isMove) postInvalidate();
             }
         }
     };
@@ -66,9 +69,16 @@ public class ViewForGradientMove extends View {
         paint.setAntiAlias(true);
     }
 
+    public void setMove(boolean move) {
+        isMove = move;
+    }
 
-    private float addtion = 0f; //当前旋转角度
-    private float addtionLine = 0f;
+    public boolean isMove() {
+        return isMove;
+    }
+
+    private float addtion = 0.3f; //当前旋转角度
+    private float addtionLine = 180f;
     /**
      * 认识 Shader.TileMode 的三种模式
      *
