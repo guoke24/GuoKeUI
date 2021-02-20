@@ -31,6 +31,9 @@ public class Sample04BitmapShaderView extends View {
 
     {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.batman);
+        // bitmap：用来做模板的 Bitmap 对象
+        // tileX：横向的 TileMode
+        // tileY：纵向的 TileMode。
         paint.setShader(new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
     }
 

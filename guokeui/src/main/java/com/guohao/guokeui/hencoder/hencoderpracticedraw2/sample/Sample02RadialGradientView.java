@@ -28,6 +28,7 @@ public class Sample02RadialGradientView extends View {
     }
 
     {
+        // 设置6和参数，圆形的x/y坐标，半径，起始和终止的颜色，颜色的平铺模式
         paint.setShader(new RadialGradient(300, 300, 200, Color.parseColor("#E91E63"),
                 Color.parseColor("#2196F3"), Shader.TileMode.CLAMP));
     }

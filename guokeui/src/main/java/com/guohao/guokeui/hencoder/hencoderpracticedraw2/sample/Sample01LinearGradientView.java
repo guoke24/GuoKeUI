@@ -28,6 +28,8 @@ public class Sample01LinearGradientView extends View {
     }
 
     {
+        // 设定五个属性：起点，终点，起始颜色，终点颜色，平铺模式
+        // 线性渐变，可以竖直水平，也可以斜着
         paint.setShader(new LinearGradient(100, 100, 500, 500, Color.parseColor("#E91E63"),
                 Color.parseColor("#2196F3"), Shader.TileMode.CLAMP));
     }

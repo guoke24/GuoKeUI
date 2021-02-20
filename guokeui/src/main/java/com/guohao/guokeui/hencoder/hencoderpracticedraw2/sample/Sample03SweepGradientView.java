@@ -26,6 +26,9 @@ public class Sample03SweepGradientView extends View {
     }
 
     {
+        // cx cy ：扫描的中心
+        // color0：扫描的起始颜色
+        // color1：扫描的终止颜色
         paint.setShader(new SweepGradient(300, 300, Color.parseColor("#E91E63"),
                 Color.parseColor("#2196F3")));
     }
