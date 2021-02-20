@@ -107,26 +107,31 @@ public class ViewForGradient extends View {
         // --- end LinearGradient ---
 
         // --- begin RadialGradient ---
+        // 放射渐变
         // 当 绘制范围 超出 Shader 范围，Shader.TileMode 才会起作用
         // 否则就是均匀当渐变
 
+        // 第5种
         initPaint();
         paint.setShader(new RadialGradient(
                 200, 1000, 200, color1, color2, Shader.TileMode.CLAMP));
         canvas.drawCircle(200, 1000, 200, paint);
 
+        // 第6种
         initPaint();
         // 边缘重复
         paint.setShader(new RadialGradient(
                 600, 1000, 100, color1, color2, Shader.TileMode.CLAMP));
         canvas.drawCircle(600, 1000, 200, paint);
 
+        // 第7种
         initPaint();
         // 从头重复
         paint.setShader(new RadialGradient(
                 200, 1400, 100, color1, color2, Shader.TileMode.REPEAT));
         canvas.drawCircle(200, 1400, 200, paint);
 
+        // 第8种
         initPaint();
         // 镜像重复
         paint.setShader(new RadialGradient(
@@ -135,10 +140,14 @@ public class ViewForGradient extends View {
         // --- end RadialGradient ---
 
         // --- begin SweepGradient ---
+        // 雷达渐变
+
+        // 第9种
         initPaint();
         paint.setShader(new SweepGradient(200,1800,color1,color2));
         canvas.drawCircle(200, 1800, 200, paint);
 
+        // 第10种
         initPaint();
         // positionArray 对应 colorArray 中颜色结束的位置
         // 如 color1 的结束位置为 0.35f * 360
@@ -150,6 +159,7 @@ public class ViewForGradient extends View {
         canvas.drawCircle(600, 1800, 200, paint);
         // --- end SweepGradient ---
 
+        // 第11种
         // LinearGradient + 数组控制渐变
         initPaint();
         colorArray = new int[]{color1, Color.BLUE, Color.YELLOW, color2};
@@ -158,12 +168,12 @@ public class ViewForGradient extends View {
                 colorArray, positionArray, Shader.TileMode.CLAMP));
         canvas.drawCircle(200, 2200, 200, paint);
 
-        // LinearGradient + 数组控制渐变
+        // 第12种
+        // RadialGradient + 数组控制渐变
         initPaint();
         paint.setShader(new RadialGradient(600, 2200, 200,
                 colorArray, positionArray, Shader.TileMode.CLAMP));
         canvas.drawCircle(600, 2200, 200, paint);
-
 
 
         // 紫金配色！！
