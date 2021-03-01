@@ -3,8 +3,10 @@
     package="com.guohao.guokeui">
 
     <application>
-        <activity android:name=".hencoder.plus.TestScalableViewActivity"
-            android:hardwareAccelerated="true"></activity>
+        <activity android:name=".TestFlingBallActivity"></activity>
+        <activity
+            android:name=".hencoder.plus.TestScalableViewActivity"
+            android:hardwareAccelerated="true" />
         <activity android:name=".TestDrawActivity" />
         <activity android:name=".TestMarqueeActivity" />
         <activity android:name=".TestShaderActivity" />

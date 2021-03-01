@@ -91,5 +91,9 @@ class GuokeUIMainActivity : AppCompatActivity() {
         btn_scalable.setOnClickListener {
             startActivity(Intent(this, TestScalableViewActivity::class.java))
         }
+
+        btn_fling_ball.setOnClickListener {
+            startActivity(Intent(this, TestFlingBallActivity::class.java))
+        }
     }
 }

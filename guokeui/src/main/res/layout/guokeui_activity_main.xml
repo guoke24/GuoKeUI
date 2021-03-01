@@ -16,14 +16,33 @@
             android:layout_height="match_parent">
 
             <Button
+                android:id="@+id/btn_fling_ball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="碰撞球"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                />
+
+            <Button
+                android:id="@+id/btn_draw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="零散绘制"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                />
+
+            <Button
                 android:id="@+id/btn_quanquan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="装圈圈"
+                android:text="转圈圈"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
@@ -35,6 +54,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_quanquan"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
@@ -46,6 +66,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_Gradient"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
@@ -57,105 +78,101 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_Marquee"
                 android:layout_marginTop="8dp"
-                />
-
-            <Button
-                android:id="@+id/btn_draw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="draw"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_TimeSpinner"
-                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_scalable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="scalable_view"
+                android:text="放缩的ImageView"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_hencode1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hencoder_draw_1"
+                android:text="绘制1：形状"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_draw"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_hencode2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hencoder_draw_2"
+                android:text="绘制2：着色器"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_hencode1"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_hencode3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hencoder_draw_3"
+                android:text="绘制3：文字"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_hencode2"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_hencode4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hencoder_draw_4"
+                android:text="绘制4：Matrix 和 Camara"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_hencode3"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_hencode5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hencoder_draw_5"
+                android:text="绘制5：绘制顺序"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_hencode4"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_hencode6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hencoder_draw_6"
+                android:text="绘制6：属性动画上手"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_hencode5"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
 
             <Button
                 android:id="@+id/btn_hencode7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hencoder_draw_7"
+                android:text="绘制7：属性动画进阶"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_hencode6"
                 android:layout_marginTop="8dp"
+                android:layout_gravity="center"
                 />
-
-
 
         </LinearLayout>
 
