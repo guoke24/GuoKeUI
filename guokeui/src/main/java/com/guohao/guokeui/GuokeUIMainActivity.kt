@@ -10,7 +10,7 @@ import com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4Activi
 import com.guohao.guokeui.hencoder.hencoderpracticedraw5.HenCoderPractive5Activity
 import com.guohao.guokeui.hencoder.hencoderpracticedraw6.HenCoderPractive6Activity
 import com.guohao.guokeui.hencoder.hencoderpracticedraw7.HenCoderPractive7Activity
-import com.guohao.guokeui.hencoder.plus.TestScalableViewActivity
+import com.guohao.guokeui.hencoder.plus.practise_scalable_view.TestScalableViewActivity
 import kotlinx.android.synthetic.main.guokeui_activity_main.*
 
 class GuokeUIMainActivity : AppCompatActivity() {

@@ -5,7 +5,7 @@
     <application>
         <activity android:name=".TestFlingBallActivity"></activity>
         <activity
-            android:name=".hencoder.plus.TestScalableViewActivity"
+            android:name=".hencoder.plus.practise_scalable_view.TestScalableViewActivity"
             android:hardwareAccelerated="true" />
         <activity android:name=".TestDrawActivity" />
         <activity android:name=".TestMarqueeActivity" />

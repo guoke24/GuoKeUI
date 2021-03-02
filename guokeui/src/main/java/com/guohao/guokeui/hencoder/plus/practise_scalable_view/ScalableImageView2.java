@@ -1,4 +1,4 @@
-package com.guohao.guokeui.hencoder.plus;
+package com.guohao.guokeui.hencoder.plus.practise_scalable_view;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -8,7 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -16,6 +15,8 @@ import android.view.View;
 import android.widget.OverScroller;
 
 import androidx.annotation.Nullable;
+
+import com.guohao.guokeui.hencoder.plus.Utils;
 
 /**
  * 一个 Demo，可放缩的ImageView

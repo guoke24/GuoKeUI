@@ -1,4 +1,4 @@
-package com.guohao.guokeui.hencoder.plus
+package com.guohao.guokeui.hencoder.plus.practise_scalable_view
 
 import android.content.Context
 import android.graphics.Canvas

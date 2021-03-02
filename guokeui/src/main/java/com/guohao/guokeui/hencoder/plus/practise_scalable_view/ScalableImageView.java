@@ -1,4 +1,4 @@
-package com.guohao.guokeui.hencoder.plus;
+package com.guohao.guokeui.hencoder.plus.practise_scalable_view;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.OverScroller;
 
 import androidx.annotation.Nullable;
+
+import com.guohao.guokeui.hencoder.plus.Utils;
 
 
 public class ScalableImageView extends View {

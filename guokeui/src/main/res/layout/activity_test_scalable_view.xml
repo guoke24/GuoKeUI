@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".hencoder.plus.TestScalableViewActivity">
+    tools:context=".hencoder.plus.practise_scalable_view.TestScalableViewActivity">
 
-    <com.guohao.guokeui.hencoder.plus.ScalableImageView2
+    <com.guohao.guokeui.hencoder.plus.practise_scalable_view.ScalableImageView2
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </com.guohao.guokeui.hencoder.plus.ScalableImageView2>
+    </com.guohao.guokeui.hencoder.plus.practise_scalable_view.ScalableImageView2>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
