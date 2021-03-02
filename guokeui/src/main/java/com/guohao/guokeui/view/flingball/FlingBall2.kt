@@ -73,22 +73,26 @@ class FlingBall2 : View {
                 )
             }
             MotionEvent.ACTION_UP -> {
-                velocityTracker.computeCurrentVelocity(1000);
-                Log.i("guohao","速度 x = " + velocityTracker.xVelocity + "，速度 y = " + velocityTracker.yVelocity)
-                var parent : ViewGroup = parent as ViewGroup
 
-                // 惯性滑动偶尔能出来，但不自然，而且有时候会归原位
-                scroller.fling(
-                    left,
-                    top,
-                    velocityTracker.xVelocity.toInt(),
-                    velocityTracker.yVelocity.toInt(),
-                    0, // 不限制边界，为了做镜像模型和反弹
-                    parent.width - width,
-                    0,
-                    parent.height - height
-                )
-                postOnAnimation(flingRunner)
+                postOnAnimation {
+                    velocityTracker.computeCurrentVelocity(1000);
+                    //Log.i("guohao","速度 x = " + velocityTracker.xVelocity + "，速度 y = " + velocityTracker.yVelocity)
+
+                    var parent : ViewGroup = parent as ViewGroup
+
+                    // 惯性滑动偶尔能出来，但不自然，而且有时候会归原位
+                    scroller.fling(
+                        left,
+                        top,
+                        velocityTracker.xVelocity.toInt()/2,
+                        velocityTracker.yVelocity.toInt()/2,
+                        0, // 不限制边界，为了做镜像模型和反弹
+                        parent.width - width,
+                        0,
+                        parent.height - height
+                    )
+                    postOnAnimation(flingRunner)
+                }
             }
 
         }
