@@ -82,94 +82,10 @@
                 />
 
             <Button
-                android:id="@+id/btn_scalable"
+                android:id="@+id/btn_hencode_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="放缩的ImageView"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                />
-
-            <Button
-                android:id="@+id/btn_hencode1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="绘制1：形状"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_draw"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                />
-
-            <Button
-                android:id="@+id/btn_hencode2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="绘制2：着色器"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_hencode1"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                />
-
-            <Button
-                android:id="@+id/btn_hencode3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="绘制3：文字"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_hencode2"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                />
-
-            <Button
-                android:id="@+id/btn_hencode4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="绘制4：Matrix 和 Camara"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_hencode3"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                />
-
-            <Button
-                android:id="@+id/btn_hencode5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="绘制5：绘制顺序"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_hencode4"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                />
-
-            <Button
-                android:id="@+id/btn_hencode6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="绘制6：属性动画上手"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_hencode5"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="center"
-                />
-
-            <Button
-                android:id="@+id/btn_hencode7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="绘制7：属性动画进阶"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_hencode6"
+                android:text="hencode_main"
                 android:layout_marginTop="8dp"
                 android:layout_gravity="center"
                 />

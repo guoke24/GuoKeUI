@@ -3,7 +3,8 @@
     package="com.guohao.guokeui">
 
     <application>
-        <activity android:name=".TestFlingBallActivity"></activity>
+        <activity android:name=".hencoder.HenCoderMainActivity"></activity>
+        <activity android:name=".TestFlingBallActivity" />
         <activity
             android:name=".hencoder.plus.practise_scalable_view.TestScalableViewActivity"
             android:hardwareAccelerated="true" />
@@ -20,6 +21,7 @@
         <activity android:name=".hencoder.hencoderpracticedraw5.HenCoderPractive5Activity" />
         <activity android:name=".hencoder.hencoderpracticedraw6.HenCoderPractive6Activity" />
         <activity android:name=".hencoder.hencoderpracticedraw7.HenCoderPractive7Activity" />
+        <activity android:name=".hencoder.plus.customview_touchdrag.TouchDragActivity" />
     </application>
 
 </manifest>

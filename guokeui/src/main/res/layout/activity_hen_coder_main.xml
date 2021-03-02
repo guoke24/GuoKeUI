@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".hencoder.HenCoderMainActivity">
+
+    <Button
+        android:id="@+id/btn_touch_drag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拖拽"
+        android:layout_margin="4dp"
+        />
+
+    <Button
+        android:id="@+id/btn_scalable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="放缩的ImageView"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_hencode1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制1：形状"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_hencode2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制2：着色器"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_hencode3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制3：文字"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_hencode4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制4：Matrix 和 Camara"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_hencode5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制5：绘制顺序"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_hencode6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制6：属性动画上手"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_hencode7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绘制7：属性动画进阶"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
