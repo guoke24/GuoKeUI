@@ -42,16 +42,20 @@ class DragUpDownLayout(context: Context, attrs: AttributeSet?) : FrameLayout(con
     }
 
     override fun onViewReleased(releasedChild: View, xvel: Float, yvel: Float) {
-      if (Math.abs(yvel) > viewConfiguration.scaledMinimumFlingVelocity) {
+      if (Math.abs(yvel) > viewConfiguration.scaledMinimumFlingVelocity) { // 速度大于阈值，用速度判断
         if (yvel > 0) {
+          // 向下的速度，移到下面
           dragHelper.settleCapturedViewAt(0, height - releasedChild.height)
         } else {
+          // 向上的速度，移到上面
           dragHelper.settleCapturedViewAt(0, 0)
         }
-      } else {
+      } else { // 速度小于阈值，用位置判断
         if (releasedChild.top < height - releasedChild.bottom) {
+          // 靠上，则放到顶部
           dragHelper.settleCapturedViewAt(0, 0)
         } else {
+          // 靠下，则放到底部
           dragHelper.settleCapturedViewAt(0, height - releasedChild.height)
         }
       }
