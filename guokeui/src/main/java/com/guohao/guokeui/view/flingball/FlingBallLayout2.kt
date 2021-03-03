@@ -32,10 +32,10 @@ class FlingBallLayout2(context: Context, attrs: AttributeSet?) : FrameLayout(con
         addView(ball2)
 
         // scrollTo 实现不行
-        var testView = TestView(context)
-        val params4 = ViewGroup.MarginLayoutParams(200, 200) // 带边距的布局参数，是纯布局参数的子类
-        params4.setMargins(0,400,0,0)
-        testView.layoutParams = params4
-        addView(testView)
+//        var testView = TestView(context)
+//        val params4 = ViewGroup.MarginLayoutParams(200, 200) // 带边距的布局参数，是纯布局参数的子类
+//        params4.setMargins(0,400,0,0)
+//        testView.layoutParams = params4
+//        addView(testView)
     }
 }

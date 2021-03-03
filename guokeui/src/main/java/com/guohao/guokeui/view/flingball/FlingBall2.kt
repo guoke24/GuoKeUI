@@ -5,14 +5,12 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.util.Log
-import android.view.MotionEvent
-import android.view.VelocityTracker
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.OverScroller
 import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.core.view.doOnNextLayout
+import java.lang.Math.abs
 
 /**
  * 不依赖手势接口实现的拖动和滑动的小球，效果勉强出来，但问题很多
@@ -31,8 +29,9 @@ class FlingBall2 : View {
     private var centreY = circleRadius
 
     private var velocityTracker: VelocityTracker
-    private lateinit var scroller : OverScroller
-    private lateinit var flingRunner : FlingRunner
+    private var scroller : OverScroller
+    private var flingRunner : FlingRunner
+    private val config : ViewConfiguration
 
     constructor(context: Context?) : super(context)
     constructor(
@@ -49,6 +48,7 @@ class FlingBall2 : View {
         velocityTracker = VelocityTracker.obtain()
         scroller = OverScroller(context)
         flingRunner = FlingRunner()
+        config = ViewConfiguration()
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -97,8 +97,10 @@ class FlingBall2 : View {
                 scroller.fling(
                     left,
                     top,
-                    velocityTracker.xVelocity.toInt(),
-                    velocityTracker.yVelocity.toInt(),
+                    if( abs(velocityTracker.xVelocity.toInt()) >= config.scaledMinimumFlingVelocity )
+                        velocityTracker.xVelocity.toInt() else 0,
+                    if( abs(velocityTracker.yVelocity.toInt()) >= config.scaledMinimumFlingVelocity )
+                        velocityTracker.yVelocity.toInt() else 0,
                     0, // 不限制边界，为了做镜像模型和反弹
                     parent.width - width,
                     0,
