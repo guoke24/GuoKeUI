@@ -11,6 +11,7 @@ import com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4Activi
 import com.guohao.guokeui.hencoder.hencoderpracticedraw5.HenCoderPractive5Activity
 import com.guohao.guokeui.hencoder.hencoderpracticedraw6.HenCoderPractive6Activity
 import com.guohao.guokeui.hencoder.hencoderpracticedraw7.HenCoderPractive7Activity
+import com.guohao.guokeui.hencoder.plus.customview_multitouch.MultitouchActivity
 import com.guohao.guokeui.hencoder.plus.customview_touchdrag.TouchDragActivity
 import com.guohao.guokeui.hencoder.plus.practise_scalable_view.TestScalableViewActivity
 import kotlinx.android.synthetic.main.activity_hen_coder_main.*
@@ -55,5 +56,10 @@ class HenCoderMainActivity : AppCompatActivity() {
         btn_touch_drag.setOnClickListener {
             startActivity(Intent(this, TouchDragActivity::class.java))
         }
+
+        btn_multitouch_touch.setOnClickListener {
+            startActivity(Intent(this, MultitouchActivity::class.java))
+        }
+
     }
 }

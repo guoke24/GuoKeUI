@@ -115,5 +115,8 @@
     <string name="title_animator_set">AnimatorSet</string>
     <string name="title_keyframe">PropertyValuesHolder.ofKeyframe()</string>
 
+    <string name="title_relay">接力型</string>
+    <string name="title_cooperation">配合型</string>
+    <string name="title_self">各自为战型</string>
 
 </resources>

@@ -8,11 +8,21 @@
     tools:context=".hencoder.HenCoderMainActivity">
 
     <Button
+        android:id="@+id/btn_multitouch_touch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="多点触控"
+        android:layout_margin="4dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
         android:id="@+id/btn_touch_drag"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="拖拽"
         android:layout_margin="4dp"
+        android:layout_gravity="center"
         />
 
     <Button
