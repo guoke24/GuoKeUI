@@ -10,7 +10,9 @@ import android.view.VelocityTracker
 import android.view.View
 import android.view.ViewGroup
 import android.widget.OverScroller
+import android.widget.Toast
 import androidx.annotation.Nullable
+import androidx.core.view.doOnNextLayout
 
 /**
  * 不依赖手势接口实现的拖动和滑动的小球，效果勉强出来，但问题很多
@@ -65,36 +67,48 @@ class FlingBall2 : View {
                 lastY = y
             }
             MotionEvent.ACTION_MOVE -> {
-                val offsetX = x - lastX
-                val offsetY = y - lastY
-                layout(
-                    left + offsetX, top + offsetY,
-                    right + offsetX, bottom + offsetY
-                )
+                postOnAnimation{
+                    if(!scroller.computeScrollOffset()){
+                        val offsetX = x - lastX
+                        val offsetY = y - lastY
+                        layout(
+                            left + offsetX, top + offsetY,
+                            right + offsetX, bottom + offsetY
+                        )
+                    }
+                }
+                // post 的方式，保证了：
+                // 如果后续有 UP 事件，则此处的 if(!scroller.computeScrollOffset()) 判断会在 scroller.fling(...) 之后执行，
+                // 也就是说保证了 UP 事件后不会再有 MOVE 事件的 layout 执行，避免了冲突
+                // ---
+                // layout -> setFrame -> invalidate -> invalidateInternal -> mParent.invalidateChild
+                // scheduleTraversals -> post 一个 mTraversalRunnable 到消息队列 -> performTraversals -> 三大流程
             }
             MotionEvent.ACTION_UP -> {
 
-                postOnAnimation {
-                    velocityTracker.computeCurrentVelocity(1000);
-                    //Log.i("guohao","速度 x = " + velocityTracker.xVelocity + "，速度 y = " + velocityTracker.yVelocity)
+                velocityTracker.computeCurrentVelocity(1000);
 
-                    var parent : ViewGroup = parent as ViewGroup
+                //Toast.makeText(context,"速度 x = " + velocityTracker.xVelocity + "，速度 y = " + velocityTracker.yVelocity,Toast.LENGTH_LONG).show()
+                //Log.i("guohao","速度 x = " + velocityTracker.xVelocity + "，速度 y = " + velocityTracker.yVelocity)
 
-                    // 惯性滑动偶尔能出来，但不自然，而且有时候会归原位
-                    scroller.fling(
-                        left,
-                        top,
-                        velocityTracker.xVelocity.toInt()/2,
-                        velocityTracker.yVelocity.toInt()/2,
-                        0, // 不限制边界，为了做镜像模型和反弹
-                        parent.width - width,
-                        0,
-                        parent.height - height
-                    )
-                    postOnAnimation(flingRunner)
-                }
+                var parent : ViewGroup = parent as ViewGroup
+
+                // 惯性滑动偶尔能出来，但不自然，而且有时候会归原位
+                scroller.fling(
+                    left,
+                    top,
+                    velocityTracker.xVelocity.toInt(),
+                    velocityTracker.yVelocity.toInt(),
+                    0, // 不限制边界，为了做镜像模型和反弹
+                    parent.width - width,
+                    0,
+                    parent.height - height
+                )
+
+
+                Log.i("guohao","ACTION_UP，left = " + left + "，top = " + top)
+                postOnAnimation(flingRunner)
             }
-
         }
         return true
     }
@@ -112,6 +126,8 @@ class FlingBall2 : View {
     inner class FlingRunner : Runnable{
         override fun run() {
             if (scroller.computeScrollOffset()) {
+
+                Log.i("guohao","computeScrollOffset，scroller.currX = " + scroller.currX + "，scroller.currY = " + scroller.currY)
 
                 // 这个写法可以，问题不在这
                 layout(
