@@ -38,7 +38,6 @@ public class Sample02ClipPathView extends View {
         // 添加一个圆心（point1.x + 200, point1.y + 200），半径为 150 的圆形通道
         path1.addCircle(point1.x + 200, point1.y + 200, 150, Path.Direction.CW);// CW 顺时针
 
-        path2.setFillType(Path.FillType.INVERSE_WINDING);//反转缠绕
         path2.addCircle(point2.x + 200, point2.y + 200, 150, Path.Direction.CW);
     }
 
@@ -52,6 +51,7 @@ public class Sample02ClipPathView extends View {
         canvas.restore();// 恢复之前的存档
 
         canvas.save();
+        path2.setFillType(Path.FillType.INVERSE_WINDING);//反转缠绕，绘制时被限制在裁切范围外
         canvas.clipPath(path2);
         canvas.drawBitmap(bitmap, point2.x, point2.y, paint);
         canvas.restore();

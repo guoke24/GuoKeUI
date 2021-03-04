@@ -34,18 +34,25 @@ public class Sample13GetTextBoundsView extends View {
         paint1.setStrokeWidth(20);
         paint1.setColor(Color.parseColor("#E91E63"));
         paint2.setTextSize(160);
+        // paint2 设置来字体大小后，就能通过 getTextBounds 函数获取文字的矩形框
 
         Rect textBounds = new Rect();
+
         paint2.getTextBounds(texts[0], 0, texts[0].length(), textBounds);
         yOffsets[0] = - (textBounds.top + textBounds.bottom) / 2;
+
         paint2.getTextBounds(texts[1], 0, texts[1].length(), textBounds);
         yOffsets[1] = - (textBounds.top + textBounds.bottom) / 2;
+
         paint2.getTextBounds(texts[2], 0, texts[2].length(), textBounds);
         yOffsets[2] = - (textBounds.top + textBounds.bottom) / 2;
+
         paint2.getTextBounds(texts[3], 0, texts[3].length(), textBounds);
         yOffsets[3] = - (textBounds.top + textBounds.bottom) / 2;
+
         paint2.getTextBounds(texts[4], 0, texts[4].length(), textBounds);
         yOffsets[4] = - (textBounds.top + textBounds.bottom) / 2;
+
         paint2.getTextBounds(texts[5], 0, texts[5].length(), textBounds);
         yOffsets[5] = - (textBounds.top + textBounds.bottom) / 2;
     }
@@ -57,11 +64,17 @@ public class Sample13GetTextBoundsView extends View {
         canvas.drawRect(50, top, getWidth() - 50, bottom, paint1);
 
         int middle = (top + bottom) / 2;
+
         canvas.drawText(texts[0], 100, middle + yOffsets[0], paint2);
+
         canvas.drawText(texts[1], 200, middle + yOffsets[1], paint2);
+
         canvas.drawText(texts[2], 300, middle + yOffsets[2], paint2);
+
         canvas.drawText(texts[3], 400, middle + yOffsets[3], paint2);
+
         canvas.drawText(texts[4], 500, middle + yOffsets[4], paint2);
+
         canvas.drawText(texts[5], 600, middle + yOffsets[5], paint2);
     }
 }

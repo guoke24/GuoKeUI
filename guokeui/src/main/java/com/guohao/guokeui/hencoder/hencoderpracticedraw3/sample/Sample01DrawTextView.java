@@ -32,6 +32,10 @@ public class Sample01DrawTextView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        // 注意： (50,100) 是文字的左底点，严格来说，是基线( baseline )
         canvas.drawText(text, 50, 100, paint);
+
+        // (50,100) 是矩形的左顶点
+        canvas.drawRect(50,100,100,150,paint);
     }
 }

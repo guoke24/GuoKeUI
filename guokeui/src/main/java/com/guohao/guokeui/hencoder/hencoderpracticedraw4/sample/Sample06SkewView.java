@@ -43,8 +43,10 @@ public class Sample06SkewView extends View {
         super.onDraw(canvas);
 
         /**
-         * @params sx 将画布在x方向上倾斜相应的角度，sx倾斜角度的tan值，其实就是将y逆时针旋转相应的角度
-         * @params sy 将画布在y方向上倾斜相应的角度，sx倾斜角度的tan值，其实就是将x顺时针旋转相应的角度
+         * @params sx 将画布在x方向上倾斜相应的角度，sx倾斜角度的tan值，其实就是将 y 轴所在的边，逆时针旋转相应的角度
+         *
+         * @params sy 将画布在y方向上倾斜相应的角度，sy倾斜角度的tan值，其实就是将 x 轴所在的边，顺时针旋转后，和 x 轴的夹角，若夹角为 0，则没有错切
+         * 换句话说，垂直错切，即拉动右边的垂直的边，导致平行于 x 轴所在的边，绕原点顺时针旋转后，和 x 轴的夹角
          */
 
         canvas.save();

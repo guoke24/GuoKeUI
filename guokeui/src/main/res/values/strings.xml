@@ -119,4 +119,6 @@
     <string name="title_cooperation">配合型</string>
     <string name="title_self">各自为战型</string>
 
+    <string name="title_xfermode_1">xfermode</string>
+
 </resources>

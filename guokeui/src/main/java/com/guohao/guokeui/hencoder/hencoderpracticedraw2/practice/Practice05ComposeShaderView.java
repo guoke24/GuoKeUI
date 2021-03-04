@@ -9,8 +9,10 @@ import android.graphics.Paint;
 import androidx.annotation.Nullable;
 import com.guohao.guokeui.R;
 
+import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.graphics.Xfermode;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -20,6 +22,8 @@ public class Practice05ComposeShaderView extends View {
     Shader shader2;
     Bitmap bitmap1;
     Bitmap bitmap2;
+
+    private static final PorterDuff.Mode MODE = PorterDuff.Mode.ADD;
 
     public Practice05ComposeShaderView(Context context) {
         super(context);
@@ -41,7 +45,7 @@ public class Practice05ComposeShaderView extends View {
         // Shader 2: BitmapShader 图片：R.drawable.batman_logo
 
         bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.batman);
-        shader1 = new BitmapShader(bitmap1, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        //shader1 = new BitmapShader(bitmap1, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
 
         bitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.batman_logo);
     }
@@ -54,14 +58,10 @@ public class Practice05ComposeShaderView extends View {
         int h = getHeight();
 
         paint.setShader(shader1);
-        //canvas.drawRect(0, 0, w/2, h/2 , paint);
 
         canvas.drawBitmap(bitmap1,0,0,null);
-        canvas.drawBitmap(bitmap2,300,0,null);
 
-        RectF rectF = new RectF(w/2,w/2,w,h);
-        //canvas.drawb
-
+        canvas.drawBitmap(bitmap2,0,0,null);
 
     }
 }

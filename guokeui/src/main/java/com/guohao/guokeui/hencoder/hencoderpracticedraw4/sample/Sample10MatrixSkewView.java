@@ -44,6 +44,7 @@ public class Sample10MatrixSkewView extends View {
 
         canvas.save();
         matrix.reset();
+        // 参考 Sample06SkewView 的注释
         matrix.postSkew(0, 0.5f, point1.x + bitmapWidth / 2, point1.y + bitmapHeight / 2);
         canvas.concat(matrix);
         canvas.drawBitmap(bitmap, point1.x, point1.y, paint);

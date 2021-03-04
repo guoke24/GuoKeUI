@@ -45,7 +45,7 @@ public class Sample08MatrixScaleView extends View {
         canvas.save();
         matrix.reset();
         // 放缩需要轴心
-        matrix.postScale(1.3f, 1.3f, point1.x + bitmapWidth / 2, point1.y + bitmapHeight / 2);
+        matrix.postScale(1.3f, 0.7f, point1.x + bitmapWidth / 2, point1.y + bitmapHeight / 2);
         canvas.concat(matrix);
         canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
         canvas.restore();

@@ -26,7 +26,7 @@ public class Sample07SetUnderlineTextView extends View {
     {
         paint.setTextSize(60);
 
-        paint.setUnderlineText(true);
+        paint.setUnderlineText(true);//是否加下划线。
     }
 
     @Override

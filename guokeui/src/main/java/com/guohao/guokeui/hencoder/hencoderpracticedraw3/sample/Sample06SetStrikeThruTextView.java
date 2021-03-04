@@ -26,7 +26,7 @@ public class Sample06SetStrikeThruTextView extends View {
     {
         paint.setTextSize(60);
 
-        paint.setStrikeThruText(true);
+        paint.setStrikeThruText(true);// 是否加删除线。
     }
 
     @Override

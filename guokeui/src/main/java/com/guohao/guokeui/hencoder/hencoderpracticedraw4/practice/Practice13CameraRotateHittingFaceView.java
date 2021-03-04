@@ -73,17 +73,24 @@ public class Practice13CameraRotateHittingFaceView extends View {
 
         int bitmapWidth = bitmap.getWidth();
         int bitmapHeight = bitmap.getHeight();
+
         int centerX = point.x + bitmapWidth / 2;
         int centerY = point.y + bitmapHeight / 2;
+        // 当图片以 point.x, point.y 为左顶点时，centerX, centerY 就是图片的中心
 
         camera.save();
         matrix.reset();
         camera.rotateX(degree);
-        camera.getMatrix(matrix);
+        camera.getMatrix(matrix); // 关联一个 matrix
         camera.restore();
-        matrix.preTranslate(-centerX, -centerY);
-        matrix.postTranslate(centerX, centerY);
+
+        // 由于缩放是以(0,0)为中心的,所以为了把 bitmap 的中心与(0,0)对齐,就要preTranslate(-centerX, -centerY),
+        matrix.preTranslate(-centerX, -centerY); // camera.rotateX(degree); 前平移
+        matrix.postTranslate(centerX, centerY);  // camera.rotateX(degree); 后平移
+
         canvas.save();
+        // 基于 Canvas 当前的变换，叠加上 matrix 中的变换，
+        // 此时的 matrix 带有 camera.rotateX(degree) 的操作，投影到 bitmap 的中心（若为 point.x, point.y 为顶点的话）
         canvas.concat(matrix);
         canvas.drawBitmap(bitmap, point.x, point.y, paint);
         canvas.restore();

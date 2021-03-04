@@ -23,6 +23,8 @@
         <activity android:name=".hencoder.hencoderpracticedraw7.HenCoderPractive7Activity" />
         <activity android:name=".hencoder.plus.customview_touchdrag.TouchDragActivity" />
         <activity android:name=".hencoder.plus.customview_multitouch.MultitouchActivity" />
+        <activity android:name=".hencoder.plus.customview_xfermode.XfermodeActivity2" />
+        <activity android:name=".hencoder.plus.customview_xfermode.XfermodeActivity3" />
     </application>
 
 </manifest>

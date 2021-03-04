@@ -1,10 +1,7 @@
 package com.guohao.guokeui.hencoder.plus.customview_multitouch
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
-import androidx.annotation.LayoutRes
-import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
