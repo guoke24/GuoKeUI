@@ -10,7 +10,17 @@ import android.widget.RelativeLayout;
 
 import com.guohao.guokeui.R;
 
-
+/**
+ * AnimatorSet 多个动画配合执行
+ *
+ * 有的时候，你不止需要在一个动画中改变多个属性，还会需要多个动画配合工作，
+ * 比如，在内容的大小从 0 放大到 100% 大小后开始移动。
+ * 这种情况使用 PropertyValuesHolder 是不行的，因为这些属性如果放在同一个动画中，
+ * 需要共享动画的开始时间、结束时间、Interpolator 等等一系列的设定，这样就不能有先后次序地执行动画了。
+ *
+ * 这就需要用到 AnimatorSet 了。
+ *
+ */
 public class Sample05AnimatorSetLayout extends RelativeLayout {
     View view;
     Button animateBt;

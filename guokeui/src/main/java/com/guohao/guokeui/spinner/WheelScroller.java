@@ -151,9 +151,13 @@ public abstract class WheelScroller {
     public void stopScrolling() {
         scroller.forceFinished(true);
     }
-    
+
+
     /**
-     * Handles Touch event 
+     * Handles Touch event
+     *
+     * 只需要记录单方向的滚动距离，不需要记录滚动后的偏移量；
+     *
      * @param event the motion event
      * @return
      */
@@ -180,7 +184,7 @@ public abstract class WheelScroller {
                 if (distance != 0) {
                     startScrolling();
                     listener.onScroll(distance);
-                    lastTouchedPosition = getMotionEventPosition(event);
+                    lastTouchedPosition = getMotionEventPosition(event);// 注意，每 move 一次，就更新一次 lastTouchedPosition
                 }
                 break;
         }

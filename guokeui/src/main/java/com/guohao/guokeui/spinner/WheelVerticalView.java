@@ -372,17 +372,24 @@ public class WheelVerticalView extends AbstractWheelView {
             int topOfBottomDivider =  topOfTopDivider + ih;
             int bottomOfBottomDivider = bottomOfTopDivider + ih;
             mSelectionDivider.setBounds(0, topOfBottomDivider, w, bottomOfBottomDivider);
-            mSelectionDivider.draw(cSeparators); // 「Drawable 的内容」 -> 「分割线canvas」
+            mSelectionDivider.draw(cSeparators); // 「Drawable 的内容」 -> 「分割线canvas」 -> 「分割线位图 mSeparatorsBitmap」
         }
 
         // 画一个矩形到 -> 「滚轮位图 mSpinBitmap」
         cSpin.drawRect(0, 0, w, h, mSelectorWheelPaint);// 着色器有渐变效果
+        // mItemsLayout 先画到了 mSpinBitmap 中，
+        // 此处再画一个带着色器带 Rect，那么，着色器怎么影响到 mItemsLayout 的呢？
+        // 其实 mSelectorWheelPaint 只是透明度
+
         // 画一个矩形到 -> 「分割线位图 mSeparatorsBitmap」
         cSeparators.drawRect(0, 0, w, h, mSeparatorsPaint);
+
         //「滚轮位图 mSpinBitmap」的内容 ->「主canvas」
         canvas.drawBitmap(mSpinBitmap, 0, 0, null);
+
         //「分割线位图 mSeparatorsBitmap」的内容 ->「主canvas」
         canvas.drawBitmap(mSeparatorsBitmap, 0, 0, null);
+
         canvas.restore();
     }
 

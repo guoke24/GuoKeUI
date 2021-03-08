@@ -38,6 +38,11 @@ public class Sample03OfObjectLayout extends RelativeLayout {
         animateBt.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 细节一： ofObject 函数，不是 ofInt 或 ofFloat 函数，因为
+                // 绑定的 view 的 position 字段的 setter 函数接收的参数类型是自定义类型，即 PointF 类型
+                // 细节二：PointFEvaluator 是 TypeEvaluator 的子类，用来计算进度动画的
+                // 细节三：view 的 position 字段的 getter 和 setter 函数，
+                // 会接收到 PointFEvaluator 的 evaluate 函数返回的 PointF 类型的实例
                 ObjectAnimator animator = ObjectAnimator.ofObject(view, "position",
                         new PointFEvaluator(), new PointF(0, 0), new PointF(1, 1));
                 animator.setInterpolator(new LinearInterpolator());

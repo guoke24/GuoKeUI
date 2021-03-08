@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.guohao.guokeui.TestTimerSpinnerActivity">
+    tools:context="com.guohao.guokeui.spinner.TestTimerSpinnerActivity">
 
     <Button
         android:id="@+id/btn_time_spinner_dialog"
@@ -27,6 +27,7 @@
         app:selectionDividerDimmedAlpha="255"
         app:selectionDividerHeight="0.5dp"
         app:visibleItems="6"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

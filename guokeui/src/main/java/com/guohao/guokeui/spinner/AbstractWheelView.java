@@ -202,7 +202,7 @@ public abstract class AbstractWheelView extends AbstractWheel {
         mSeparatorsPaint.setAlpha(mSelectionDividerDimmedAlpha);
 
         mSelectorWheelPaint = new Paint();
-        mSelectorWheelPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        mSelectorWheelPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));// 先画扣出跟后画的交集的区域，所以才会有用到后画的 paint ？
     }
 
     /**

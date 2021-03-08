@@ -4,7 +4,7 @@
 
     <application>
         <activity android:name=".hencoder.HenCoderMainActivity"></activity>
-        <activity android:name=".TestFlingBallActivity" />
+        <activity android:name=".view.flingball.TestFlingBallActivity" />
         <activity
             android:name=".hencoder.plus.practise_scalable_view.TestScalableViewActivity"
             android:hardwareAccelerated="true" />
@@ -13,7 +13,7 @@
         <activity android:name=".TestShaderActivity" />
         <activity android:name=".TestStrokMoveActivity" />
         <activity android:name=".GuokeUIMainActivity" />
-        <activity android:name=".TestTimerSpinnerActivity" />
+        <activity android:name=".spinner.TestTimerSpinnerActivity" />
         <activity android:name=".hencoder.hencoderpracticedraw1.HenCoderPractive1Activity" />
         <activity android:name=".hencoder.hencoderpracticedraw2.HenCoderPractive2Activity" />
         <activity android:name=".hencoder.hencoderpracticedraw3.HenCoderPractive3Activity" />

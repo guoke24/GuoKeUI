@@ -1,9 +1,10 @@
-package com.guohao.guokeui
+package com.guohao.guokeui.spinner
 
 import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.guohao.guokeui.R
 import com.guohao.guokeui.spinner.adapters.AbstractWheelTextAdapter
 import kotlinx.android.synthetic.main.guokeui_activity_test_time_spinner.*
 
@@ -31,6 +32,14 @@ class TestTimerSpinnerActivity : AppCompatActivity() {
 }
 
 
+/**
+ * 适配器
+ *
+ * 需要提供 item 的 字符串，可拿到 index
+ *
+ * 提供总数
+ *
+ */
 class TimeAdapter : AbstractWheelTextAdapter {
 
     constructor(context: Context?) : super(context)

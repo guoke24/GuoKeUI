@@ -14,22 +14,29 @@ class FlingBallLayout2(context: Context, attrs: AttributeSet?) : FrameLayout(con
 
     private var ball : FlingBall? = null
     private var ball2 : FlingBall2? = null
+    private var ball3 : FlingBall3? = null
 
 
     init {
 
         // GestureDetector + layout 实现拖动会晃，fing 倒是可以
         ball = FlingBall(context)
-        val params2 = ViewGroup.LayoutParams(200, 200)
-        ball?.layoutParams = params2
+        val params = ViewGroup.LayoutParams(200, 200)
+        ball?.layoutParams = params
         addView(ball)
 
         // layout + VelocityTracker + post 等方式，基本可以
         ball2 = FlingBall2(context)
-        val params3 = ViewGroup.MarginLayoutParams(200, 200) // 带边距的布局参数，是纯布局参数的子类
-        params3.setMargins(0,200,0,0)
-        ball2?.layoutParams = params3
+        val params2 = ViewGroup.MarginLayoutParams(200, 200) // 带边距的布局参数，是纯布局参数的子类
+        params2.setMargins(0,200,0,0)
+        ball2?.layoutParams = params2
         addView(ball2)
+
+        ball3 = FlingBall3(context)
+        val params3 = ViewGroup.MarginLayoutParams(200, 200) // 带边距的布局参数，是纯布局参数的子类
+        params3.setMargins(0,400,0,0)
+        ball3?.layoutParams = params3
+        addView(ball3)
 
         // scrollTo 实现不行
 //        var testView = TestView(context)

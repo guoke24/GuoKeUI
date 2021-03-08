@@ -56,7 +56,7 @@ import java.util.List;
  * 子item的测量，布局，绘制时机的控制；
  *
  * 特别注意：
- * 可见的 items 会被添加到 itemsLayout 这个 LinearLayout，
+ * 可见的 items 会被添加到 itemsLayout（LinearLayout），
  * 为此封装了一个 ItemsRange 类，用于标记可见 items 的区间，
  * 映射 items 的列表，采用环形列表逻辑的下标计算，可以有负数。
  *
@@ -205,8 +205,12 @@ public abstract class AbstractWheel extends View {
 
             // 滚动过程中会调用多次
             public void onScroll(int distance) {
+
+                // 交给专门的处理函数
                 doScroll(distance);
 
+                // 处理偏移量，问题是 mScrollingOffset 表示什么含义？
+                // 该部分去掉好像也没啥问题
                 int dimension = getBaseDimension();
                 if (mScrollingOffset > dimension) {
                     mScrollingOffset = dimension;
@@ -366,6 +370,8 @@ public abstract class AbstractWheel extends View {
      * @param delta the scrolling value
      */
     private void doScroll(int delta) {
+        // delta 是有正负之分非
+
         mScrollingOffset += delta;
 
         int itemDimension = getItemDimension();
@@ -378,7 +384,7 @@ public abstract class AbstractWheel extends View {
         if (Math.abs(fixPos) <= itemDimension / 2) {   // 此处先取余，做一个四舍五入的判断来做修正
             fixPos = 0;
         }
-        if (mIsCyclic && itemCount > 0) {
+        if (mIsCyclic && itemCount > 0) { // 循环模式
 
             if (fixPos > 0) { // 说明偏移量是正数，
                 pos--;        // 选中的 item 下标，往上挪一格
@@ -396,7 +402,8 @@ public abstract class AbstractWheel extends View {
             pos %= itemCount;
             // end 环形列表式的修正逻辑
 
-        } else {
+        } else { // 非循环模式
+
             if (pos < 0) { // 滚轮往下滚过底，选中栏往上挪到头
                 count = mCurrentItemIdx;
                 pos = 0;
@@ -413,6 +420,7 @@ public abstract class AbstractWheel extends View {
         }
 
         int offset = mScrollingOffset;
+
         if (pos != mCurrentItemIdx) {
             setCurrentItem(pos, false); // 更新选中的下标 mCurrentItemIdx，会影响到 rebuildItem 函数中，新序列的推算
         } else {
@@ -421,9 +429,13 @@ public abstract class AbstractWheel extends View {
 
         // update offset
         int baseDimension = getBaseDimension();
-        mScrollingOffset = offset - count * itemDimension;// 滚动完成后，要减去已滚动的item的偏移量
+
+        mScrollingOffset = offset - count * itemDimension;// 滚动完成后，要减去已滚动的item的偏移量，得到剩余的偏移量
+
+        // 万一滚动太多，剩余偏移量超出整个 滚动控件 的高度，则需要修正
         if (mScrollingOffset > baseDimension) {
-            // 能进这里，说明 count 负数，mScrollingOffset 也是负数
+            // 能进这里，说明 count 负数
+            // 问题是，这样计算出的 mScrollingOffset 还是 大于 baseDimension ？？？
             mScrollingOffset = mScrollingOffset % baseDimension + baseDimension;
         }
         // drawItems 函数，会用到 mScrollingOffset 变量
@@ -967,14 +979,27 @@ public abstract class AbstractWheel extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
-                if (!mIsScrollingPerformed) {
+
+                if (!mIsScrollingPerformed) { // 如果不是在处理滚动，则进入
+
+                    // 手指抬起的位置 和 中线 的距离（此处以垂直滚轮为例）
                     int distance = (int) getMotionEventPosition(event) - getBaseDimension() / 2;
-                    if (distance > 0) {
+
+                    if (distance > 0) { // 在下半区
                         distance += getItemDimension() / 2;
-                    } else {
+                    } else { // 在上半区
                         distance -= getItemDimension() / 2;
                     }
+                    // 为何补上半个 item 的高？
+                    // 因为中间 item 被中线分为上下两半，
+                    // 抬起的点，只要偏离中线半个 item 的高以上，则认为偏离了一个 item，
+                    // 补上半个 item 的高，为了下面的运算；
+                    // 若 x > 0.5，则 x + 0.5 > 1；int 的 除运算，向下取整；
+
+                    // 反正，items 表示 手指抬起的位置 偏移了多少个 item
                     int items = distance / getItemDimension();
+
+                    // 若确实偏移了 item，且偏移到的位置所在，是合法的 item，则回调点击，没错，就是点击事件的重新处理的逻辑而已
                     if (items != 0 && isValidItemIndex(mCurrentItemIdx + items)) {
                         notifyClickListenersAboutClick(mCurrentItemIdx + items);
                     }

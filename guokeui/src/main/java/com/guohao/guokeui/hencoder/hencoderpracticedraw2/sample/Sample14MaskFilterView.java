@@ -35,6 +35,7 @@ public class Sample14MaskFilterView extends View {
     }
 
     {
+        // 不生效，但预览界面生效的，可以去那看看效果
         setLayerType(LAYER_TYPE_SOFTWARE, null);
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.what_the_fuck);
     }

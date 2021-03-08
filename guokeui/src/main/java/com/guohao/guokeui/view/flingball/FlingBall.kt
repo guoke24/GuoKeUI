@@ -133,7 +133,6 @@ class FlingBall : View {
 //                (right - distanceX).toInt(), (bottom - distanceY).toInt()
 //            )
 
-
             // 写法三：自己算距离，拖动跟手，但是影响滑动
 //            var x = event.x - down.x
 //            var y = event.y - down.y
@@ -144,6 +143,12 @@ class FlingBall : View {
             // 写法四：滚动父控件，会晃动，也会影响到滑动
 //            var parent : View = parent as View
 //            parent.scrollBy(distanceX.toInt(), distanceY.toInt())
+
+            // 写法五：不晃动，也会影响到滑动；若直接用 distanceX 也会晃动
+            var x = event.x - down.x
+            var y = event.y - down.y
+            setX(getX() + x)
+            setY(getY() + y)
 
             return false
         }

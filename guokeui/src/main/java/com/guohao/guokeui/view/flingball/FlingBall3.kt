@@ -2,11 +2,13 @@ package com.guohao.guokeui.view.flingball
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.util.Log
 import android.view.*
 import android.widget.OverScroller
+import android.widget.Scroller
 import android.widget.Toast
 import androidx.annotation.Nullable
 import androidx.core.view.doOnNextLayout
@@ -18,7 +20,7 @@ import java.lang.Math.abs
  * 该小球希望被做成可以独立但添加到 其他容器中，都保证效果正常
  *
  */
-class FlingBall2 : View {
+class FlingBall3 : View {
 
     private var lastX = 0
     private var lastY = 0
@@ -49,6 +51,7 @@ class FlingBall2 : View {
         scroller = OverScroller(context)
         flingRunner = FlingRunner()
         config = ViewConfiguration()
+        paint.color = Color.parseColor("#009933");
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -68,23 +71,23 @@ class FlingBall2 : View {
             }
             MotionEvent.ACTION_MOVE -> {
 
+
                 postOnAnimation{
                     if(!scroller.computeScrollOffset()){
                         val offsetX = x - lastX
                         val offsetY = y - lastY
-                        layout(
-                            left + offsetX, top + offsetY,
-                            right + offsetX, bottom + offsetY
-                        )
-
+                        setX(getX() + offsetX)
+                        setY(getY() + offsetY)
                     }
                 }
                 // post 的方式，保证了：
                 // 如果后续有 UP 事件，则此处的 if(!scroller.computeScrollOffset()) 判断会在 scroller.fling(...) 之后执行，
                 // 也就是说保证了 UP 事件后不会再有 MOVE 事件的 layout 执行，避免了冲突
                 // ---
-                // layout -> setFrame -> invalidate -> invalidateInternal -> mParent.invalidateChild
-                // scheduleTraversals -> post 一个 mTraversalRunnable 到消息队列 -> performTraversals -> 三大流程
+                // layout 替换成 getX() 和 getY()，试试效果
+                // 还是存在原来的问题，而且有回弹的情况。。。
+                // OverScroller 替换成 Scroller，回弹效果更加明显
+
             }
             MotionEvent.ACTION_UP -> {
 
@@ -97,8 +100,8 @@ class FlingBall2 : View {
 
                 // 惯性滑动偶尔能出来，但不自然，而且有时候会归原位
                 scroller.fling(
-                    left,
-                    top,
+                    getX().toInt(),
+                    getY().toInt(),
                     if( abs(velocityTracker.xVelocity.toInt()) >= config.scaledMinimumFlingVelocity )
                         velocityTracker.xVelocity.toInt() else 0,
                     if( abs(velocityTracker.yVelocity.toInt()) >= config.scaledMinimumFlingVelocity )
@@ -134,17 +137,14 @@ class FlingBall2 : View {
                 Log.i("guohao","computeScrollOffset，scroller.currX = " + scroller.currX + "，scroller.currY = " + scroller.currY)
 
                 // 这个写法可以，问题不在这
-                layout(
-                    scroller.currX, scroller.currY,
-                     scroller.currX + width, scroller.currY + height
-                )
+//                layout(
+//                    scroller.currX, scroller.currY,
+//                    scroller.currX + width, scroller.currY + height
+//                )
 
-                // 这个写法不行
-//                left = scroller.currX
-//                top = scroller.currY
-//                right = scroller.currX + width
-//                bottom = scroller.currY + height
-//                invalidate()
+                setX(scroller.currX.toFloat())
+                setY(scroller.currY.toFloat())
+
 
                 postOnAnimation(this)
             }

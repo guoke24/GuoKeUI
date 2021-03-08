@@ -29,6 +29,7 @@ public class Sample16TextPathView extends View {
     {
         paint.setTextSize(120);
         paint.getTextPath(text, 0, text.length(), 50, 400, textPath);
+        // 得到文字的轮廓，保存到 textPath
 
         pathPaint.setStyle(Paint.Style.STROKE);
     }

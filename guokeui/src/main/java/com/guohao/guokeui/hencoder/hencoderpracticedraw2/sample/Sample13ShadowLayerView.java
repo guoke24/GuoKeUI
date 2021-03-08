@@ -26,6 +26,10 @@ public class Sample13ShadowLayerView extends View {
 
     {
         paint.setShadowLayer(10, 5, 5, Color.RED);
+        // 在之后的绘制内容下面加一层阴影。
+        // radius 是阴影的模糊范围； dx dy 是阴影的偏移量； shadowColor 是阴影的颜色。
+        //
+        // 如果要清除阴影层，使用 clearShadowLayer() 。
     }
 
     @Override

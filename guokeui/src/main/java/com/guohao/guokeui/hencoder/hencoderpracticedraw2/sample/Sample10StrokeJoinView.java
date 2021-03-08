@@ -39,6 +39,10 @@ public class Sample10StrokeJoinView extends View {
 
         canvas.save();
 
+        // 先用 path 指定两条线的路径 by 两个点
+        // 再用 paint 的 setStrokeJoin 函数，指定拐角的风格
+        // 设置拐角的形状。有三个值可以选择：MITER 尖角、 BEVEL 平角和 ROUND 圆角。默认为 MITER。
+
         canvas.translate(100, 100);
         paint.setStrokeJoin(Paint.Join.MITER);
         canvas.drawPath(path, paint);

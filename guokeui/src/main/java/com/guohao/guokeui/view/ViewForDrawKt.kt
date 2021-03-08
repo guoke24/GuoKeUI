@@ -40,19 +40,25 @@ class ViewForDrawKt : View {
 
         paint.setAntiAlias(true) //设置画笔为无锯齿
         paint.setColor(Color.BLACK) //设置画笔颜色
-        //canvas!!.drawColor(Color.RED) //白色背景
         paint.setStrokeWidth(5.0.toFloat()) //线宽
-        paint.setStyle(Paint.Style.STROKE)
+
+        paint.style = Paint.Style.STROKE
         canvas!!.drawArc(rect, 225F, 90F, false, paint) //绘制圆弧
 
         moveRectToRight(rect)
         canvas.drawRect(rect,paint)
-        canvas.drawArc(rect, 225F, 90F, true, paint) //绘制圆弧
+        canvas.drawArc(rect, 225F, 90F, true, paint) //绘制空心扇形
 
         moveRectToRight(rect)
         canvas.drawRect(rect,paint)
         paint.style = Paint.Style.FILL
-        canvas.drawArc(rect, 225F, 90F, true, paint) //绘制圆弧
+        canvas.drawArc(rect, 225F, 90F, true, paint) //绘制实心扇形
+
+        moveRectToBottom(rect)
+        paint.style = Paint.Style.STROKE
+        canvas.drawRect(rect,paint)
+        paint.style = Paint.Style.FILL
+        canvas.drawArc(rect, 225F, 90F, false, paint) //绘制新月
 
     }
 
@@ -63,4 +69,10 @@ class ViewForDrawKt : View {
         rect.bottom = rect.bottom //下边
     }
 
+    private fun moveRectToBottom(rect : RectF){
+        rect.left   = rect.left  //左边
+        rect.top    = rect.top + interval //上边
+        rect.right  = rect.right  //右边
+        rect.bottom = rect.bottom + interval //下边
+    }
 }

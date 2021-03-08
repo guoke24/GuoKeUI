@@ -1,7 +1,8 @@
-package com.guohao.guokeui
+package com.guohao.guokeui.view.flingball
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.guohao.guokeui.R
 
 class TestFlingBallActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

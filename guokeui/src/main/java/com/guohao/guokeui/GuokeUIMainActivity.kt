@@ -4,14 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.guohao.guokeui.hencoder.HenCoderMainActivity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw1.HenCoderPractive1Activity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw2.HenCoderPractive2Activity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw3.HenCoderPractive3Activity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw4.HenCoderPractive4Activity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw5.HenCoderPractive5Activity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw6.HenCoderPractive6Activity
-import com.guohao.guokeui.hencoder.hencoderpracticedraw7.HenCoderPractive7Activity
-import com.guohao.guokeui.hencoder.plus.practise_scalable_view.TestScalableViewActivity
+import com.guohao.guokeui.spinner.TestTimerSpinnerActivity
+import com.guohao.guokeui.view.flingball.TestFlingBallActivity
 import kotlinx.android.synthetic.main.guokeui_activity_main.*
 
 class GuokeUIMainActivity : AppCompatActivity() {

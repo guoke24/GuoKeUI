@@ -47,11 +47,17 @@ public class Sample02HsvEvaluatorLayout extends RelativeLayout {
         });
     }
 
+    // HSV 色相、饱和度、明度
+    // HSL 色相、饱和度、亮度
+    // RGB 红色、绿色、蓝色
     private class HsvEvaluator implements TypeEvaluator<Integer> {
         float[] startHsv = new float[3];
         float[] endHsv = new float[3];
         float[] outHsv = new float[3];
 
+        // fraction 完成度
+        // startValue 起始值
+        // endValue 终点值
         @Override
         public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
             // 把 ARGB 转换成 HSV

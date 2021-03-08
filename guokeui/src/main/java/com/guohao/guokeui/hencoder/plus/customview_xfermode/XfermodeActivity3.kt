@@ -138,6 +138,13 @@ class XfermodeActivity3 : ControlSrcollViewPagerActivity2<XfermodePageFragment>(
                 0
             )
         )
+        pageModels.add(
+            PageModel(
+                PorterDuff.Mode.XOR.ordinal,
+                "XOR",
+                0
+            )
+        )
     }
 
     override fun getClassT(): Class<XfermodePageFragment> {

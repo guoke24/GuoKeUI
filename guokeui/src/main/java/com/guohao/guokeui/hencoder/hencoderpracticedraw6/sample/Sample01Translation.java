@@ -87,6 +87,7 @@ public class Sample01Translation extends RelativeLayout {
 
     /**
      * 为音乐图标设置三角形的 Outline。
+     * 使得其 Z 轴移动时，能看到阴影
      */
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     class MusicOutlineProvider extends ViewOutlineProvider {
