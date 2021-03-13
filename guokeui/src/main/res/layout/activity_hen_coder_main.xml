@@ -56,7 +56,7 @@
         android:id="@+id/btn_hencode2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="绘制2：着色器"
+        android:text="绘制2：Paint"
         android:layout_marginTop="8dp"
         android:layout_gravity="center"
         />
@@ -74,7 +74,7 @@
         android:id="@+id/btn_hencode4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="绘制4：Matrix 和 Camara"
+        android:text="绘制4：Matrix 和 Camera"
         android:layout_marginTop="8dp"
         android:layout_gravity="center"
         />

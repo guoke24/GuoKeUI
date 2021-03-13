@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.guohao.guokeui.hencoder.HenCoderMainActivity
+import com.guohao.guokeui.smallapp.SmallAppMainActivity
 import com.guohao.guokeui.spinner.TestTimerSpinnerActivity
 import com.guohao.guokeui.view.flingball.TestFlingBallActivity
 import kotlinx.android.synthetic.main.guokeui_activity_main.*
@@ -63,6 +64,10 @@ class GuokeUIMainActivity : AppCompatActivity() {
 
         btn_hencode_main.setOnClickListener {
             startActivity(Intent(this, HenCoderMainActivity::class.java))
+        }
+
+        btn_smallapp_main.setOnClickListener {
+            startActivity(Intent(this, SmallAppMainActivity::class.java))
         }
     }
 }

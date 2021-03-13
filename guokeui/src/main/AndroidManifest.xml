@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.guohao.guokeui">
 
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <application>
-        <activity android:name=".hencoder.HenCoderMainActivity"></activity>
+        <activity android:name=".smallapp.SmallAppRecyclerView2Activity"></activity>
+        <activity android:name=".smallapp.SmallAppRecyclerViewActivity" />
+        <activity android:name=".smallapp.SmallAppMainActivity" />
+        <activity android:name=".hencoder.HenCoderMainActivity" />
         <activity android:name=".view.flingball.TestFlingBallActivity" />
         <activity
             android:name=".hencoder.plus.practise_scalable_view.TestScalableViewActivity"
