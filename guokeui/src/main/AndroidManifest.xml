@@ -29,6 +29,7 @@
         <activity android:name=".hencoder.plus.customview_multitouch.MultitouchActivity" />
         <activity android:name=".hencoder.plus.customview_xfermode.XfermodeActivity2" />
         <activity android:name=".hencoder.plus.customview_xfermode.XfermodeActivity3" />
+        <activity android:name=".hencoder.plus.layoutlayout.TabLayoutMainActivity" />
     </application>
 
 </manifest>
