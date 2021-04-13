@@ -3,8 +3,11 @@
     package="com.guohao.guokeui">
 
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
     <application>
-        <activity android:name=".smallapp.SmallAppRecyclerView2Activity"></activity>
+        <activity android:name=".smallapp.TestBaseQuickAdapterActivity"></activity>
+        <activity android:name=".smallapp.SmallAppRecyclerView3Activity" />
+        <activity android:name=".smallapp.SmallAppRecyclerView2Activity" />
         <activity android:name=".smallapp.SmallAppRecyclerViewActivity" />
         <activity android:name=".smallapp.SmallAppMainActivity" />
         <activity android:name=".hencoder.HenCoderMainActivity" />

@@ -22,7 +22,7 @@
         android:id="@+id/tv_item_name2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hello"
+        android:text="world"
         android:textColor="#000000"
         android:textSize="20sp"
         android:gravity="center"

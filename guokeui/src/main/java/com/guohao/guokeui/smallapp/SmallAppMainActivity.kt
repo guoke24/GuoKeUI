@@ -42,6 +42,10 @@ class SmallAppMainActivity : AppCompatActivity() {
         btn_recyclerView2.setOnClickListener {
             startActivity(Intent(this,SmallAppRecyclerView2Activity::class.java))
         }
+
+        btn_recyclerView3.setOnClickListener {
+            startActivity(Intent(this,TestBaseQuickAdapterActivity::class.java))
+        }
     }
 
 }
