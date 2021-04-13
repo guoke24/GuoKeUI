@@ -82,15 +82,15 @@ public class Sample13CameraRotateHittingFaceView extends View {
         int bitmapWidth = bitmap.getWidth();
         int bitmapHeight = bitmap.getHeight();
         int centerX = point.x + bitmapWidth / 2;
-        int centerY = point.y + bitmapHeight / 2;
+        int centerY = point.y + bitmapHeight / 2;// 算出中心点是为了 camera 的旋转
 
         camera.save();
         matrix.reset();
-        camera.rotateX(degree);
-        camera.getMatrix(matrix);
+        camera.rotateY(degree);
+        camera.getMatrix(matrix); // camera 得先关联到 matrix，再关联到 canvas
         camera.restore();
-        matrix.preTranslate(-centerX, -centerY);
-        matrix.postTranslate(centerX, centerY);
+        matrix.preTranslate(-centerX, -centerY);// camera 旋转之前，把图片移动到 0，0
+        matrix.postTranslate(centerX, centerY); // camera 旋转之前，把图片移动会原来的位置
         canvas.save();
         canvas.concat(matrix);
         canvas.drawBitmap(bitmap, point.x, point.y, paint);
