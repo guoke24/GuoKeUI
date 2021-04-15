@@ -26,14 +26,16 @@ class TagLayout(context: Context?, attrs: AttributeSet?) : ViewGroup(context, at
     for ((index, child) in children.withIndex()) {
 
       // 测量子 view
-      measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
+      //measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
+      measureChild(child, widthMeasureSpec, heightMeasureSpec)
 
       if (specWidthMode != MeasureSpec.UNSPECIFIED &&
         lineWidthUsed + child.measuredWidth > specWidthSize) { // 换行，重新测量
         lineWidthUsed = 0 // 从左边开始
         heightUsed += lineMaxHeight // 累加上一行的高
         lineMaxHeight = 0 // 单行最大高度清零
-        measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
+        //measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
+        measureChild(child, widthMeasureSpec, heightMeasureSpec)
       }
 
       if (index >= childrenBounds.size) {
