@@ -52,4 +52,6 @@ dependencies {
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
     //
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    api project(":baselib")
 }
