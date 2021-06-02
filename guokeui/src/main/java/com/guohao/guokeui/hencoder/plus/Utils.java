@@ -18,8 +18,11 @@ public class Utils {
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(res, R.drawable.avatar_rengwuxian, options);
         options.inJustDecodeBounds = false;
-        options.inDensity = options.outWidth;
+        options.inDensity = options.outWidth;// 经过第一次加载，options.outWidth 才会有值
         options.inTargetDensity = size;
         return BitmapFactory.decodeResource(res, R.drawable.avatar_rengwuxian, options);
     }
+    // options.inDensity
+    // options.inTargetDensity
+    // 是什么意思
 }

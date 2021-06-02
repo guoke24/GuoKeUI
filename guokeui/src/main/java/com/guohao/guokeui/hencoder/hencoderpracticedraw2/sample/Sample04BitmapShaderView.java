@@ -50,5 +50,10 @@ public class Sample04BitmapShaderView extends View {
 
         canvas.drawBitmap(bitmap,0,0,paint);
         canvas.drawCircle(250, bitmap.getHeight() + 250, 250, paint);
+
+        // 画文字时，不会用到 paint 的 Shader
+//        paint.setTextSize(48);
+//        paint.setColor(Color.RED);
+//        canvas.drawText("Hello",10,40,paint);
     }
 }

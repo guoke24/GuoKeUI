@@ -14,7 +14,7 @@ import com.guohao.guokeui.hencoder.plus.customview_multitouch.dp
  * 各自为战型
  *
  * 本质是一对一独立处理。
- *
+ * 因此得为每一根手指保存一份记录，如下的 paths 集合，记录了每一根手指的路径
  */
 class MultiTouchView3(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
   private val paint = Paint(Paint.ANTI_ALIAS_FLAG)

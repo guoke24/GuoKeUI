@@ -63,8 +63,18 @@ public class Sample02HsvEvaluatorLayout extends RelativeLayout {
             // 把 ARGB 转换成 HSV
             Color.colorToHSV(startValue, startHsv);
             Color.colorToHSV(endValue, endHsv);
+            // 数据结构解析：
+            // startValue 是表示 RGB 的 int 值，而 RGB 有三种颜色，加上透明度，一共四种值；
+            // 这四种值，占据了 32 int 值的四个部分：
+            // 0 - 7，8 - 15，16 - 23，24 - 32
+            // 上述 Color.colorToHSV 函方法，就是通过移位运算和&运算，把每一部分的值提取出来，
+            // 存到一个数组中，使得 RGB 每一个值都能用一个单独的变量存储，便于后续计算
 
-            // 计算当前动画完成度（fraction）所对应的颜色值
+            // 核心思路：
+            // 让每个颜色的数值独立出来，单独的计算它们的渐变
+            // 而不是在一个 int 值里，让这个 int 值渐变
+
+            // 计算当前动画完成度（fraction）所对RGB应的颜色值
             if (endHsv[0] - startHsv[0] > 180) {
                 endHsv[0] -= 360;
             } else if (endHsv[0] - startHsv[0] < -180) {

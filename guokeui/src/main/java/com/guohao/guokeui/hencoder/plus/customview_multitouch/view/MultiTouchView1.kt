@@ -80,6 +80,9 @@ class MultiTouchView1(context: Context?, attrs: AttributeSet?) : View(context, a
     return true
   }
 
+  /**
+   * 根据下标对应的手指，更新偏移量
+   */
   private fun updateOffsetByIndex(event:MotionEvent,index:Int){
     trackingPointerId = event.getPointerId(index)
     downX = event.getX(index)

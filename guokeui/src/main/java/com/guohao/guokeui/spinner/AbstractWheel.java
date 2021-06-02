@@ -203,7 +203,7 @@ public abstract class AbstractWheel extends View {
                 }
             }
 
-            // 滚动过程中会调用多次
+            // 滚动过程中会调用多次，具体来说，每一次 Move 事件，就调用一次
             public void onScroll(int distance) {
 
                 // 交给专门的处理函数
@@ -370,7 +370,7 @@ public abstract class AbstractWheel extends View {
      * @param delta the scrolling value
      */
     private void doScroll(int delta) {
-        // delta 是有正负之分非
+        // delta 是有正负之分的
 
         mScrollingOffset += delta;
 
@@ -857,7 +857,7 @@ public abstract class AbstractWheel extends View {
     private ItemsRange getItemsRange() {
         Log.i("guohao-spin-aw","===> getItemsRange ");
 
-        if (mIsAllVisible) { // 所以可见的处理
+        if (mIsAllVisible) {
             int baseDimension = getBaseDimension();
             int itemDimension = getItemDimension();
             Log.i("guohao-spin-aw"," baseDimension = " + baseDimension);
@@ -866,6 +866,7 @@ public abstract class AbstractWheel extends View {
                 mVisibleItems = baseDimension / itemDimension + 1;
             }
         }
+        // 根据总高度和每个item的高度，算出可见 item 的数量
 
         Log.i("guohao-spin-aw"," mVisibleItems = " + mVisibleItems);
 
@@ -873,7 +874,7 @@ public abstract class AbstractWheel extends View {
         int end = start + mVisibleItems - (mVisibleItems % 2 == 0 ? 0 : 1); // 可见为奇数，下边缘的下标要减1
         Log.i("guohao-spin-aw"," 0 start = " + start + "，end = " + end);
 
-        // 有偏移，调整边缘的下标
+        // 有偏移，item 的数量，调整边缘的下标，要么 start 往上挪一位，要么 end 往下挪一位
         if (mScrollingOffset != 0) {
             Log.i("guohao-spin-aw","mScrollingOffset =  " + mScrollingOffset);
             if (mScrollingOffset > 0) { // 朝下偏移
@@ -886,7 +887,7 @@ public abstract class AbstractWheel extends View {
         }
         Log.i("guohao-spin-aw"," 1 start = " + start + "，end = " + end);
 
-        // 不支持循环，就维持先前的逻辑
+        // 不支持循环，就修正 start 和 end 的数值
         if (!isCyclic()) {
             if (start < 0) {
                 start = 0;
@@ -999,7 +1000,8 @@ public abstract class AbstractWheel extends View {
                     // 反正，items 表示 手指抬起的位置 偏移了多少个 item
                     int items = distance / getItemDimension();
 
-                    // 若确实偏移了 item，且偏移到的位置所在，是合法的 item，则回调点击，没错，就是点击事件的重新处理的逻辑而已
+                    // 若确实偏移了 item，且偏移到的位置所在，是合法的 item，则回调点击，
+                    // 即点击事件的 itemClick 的逻辑，注意只有 up 事件和非滚动状态会走这里
                     if (items != 0 && isValidItemIndex(mCurrentItemIdx + items)) {
                         notifyClickListenersAboutClick(mCurrentItemIdx + items);
                     }

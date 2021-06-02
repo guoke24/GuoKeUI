@@ -180,6 +180,7 @@ public abstract class WheelScroller {
 
             case MotionEvent.ACTION_MOVE:
                 // perform scrolling
+                // distance 是跟上一次触摸点的距离
                 int distance = (int)(getMotionEventPosition(event) - lastTouchedPosition);
                 if (distance != 0) {
                     startScrolling();

@@ -47,6 +47,7 @@ public class Sample02ClipPathView extends View {
 
         canvas.save();// 存档当前状态
         canvas.clipPath(path1);//先剪裁，再绘制时被限制在裁切范围内
+        //canvas.scale(2,2,point1.x, point1.y);
         canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
         canvas.restore();// 恢复之前的存档
 

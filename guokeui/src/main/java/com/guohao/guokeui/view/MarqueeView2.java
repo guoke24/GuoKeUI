@@ -110,6 +110,7 @@ public class MarqueeView2 extends SurfaceView implements SurfaceHolder.Callback 
         // 设定阴影(柔边, X 轴位移, Y 轴位移, 阴影颜色)
 //        mTextPaint.setShadowLayer(5, 3, 3, ShadowColor);
         textWidth = (int) mTextPaint.measureText(margueeString);
+        // 获取文字高度时，无需知道字数，只需知道 TextSize
         Paint.FontMetrics fontMetrics = mTextPaint.getFontMetrics();
         textHeight = (int) fontMetrics.bottom;
         WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);

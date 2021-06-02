@@ -21,4 +21,10 @@
     <declare-styleable name="WheelHorizontalView">
         <attr name="selectionDividerWidth" format="dimension" />
     </declare-styleable>
+
+    <!-- 圆角|圆形的 ImageView -->
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" format="dimension" />
+        <attr name="image_type" format="integer" />
+    </declare-styleable>
 </resources>

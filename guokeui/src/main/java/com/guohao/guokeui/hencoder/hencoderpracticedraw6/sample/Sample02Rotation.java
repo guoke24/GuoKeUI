@@ -40,7 +40,8 @@ public class Sample02Rotation extends RelativeLayout {
             public void onClick(final View v) {
                 switch (state) {
                     case 0:
-                        imageView.animate().rotation(180);
+                        //imageView.animate().rotation(180);
+                        imageView.setRotation(180);//没有动画效果的
                         break;
                     case 1:
                         imageView.animate().rotation(0);
