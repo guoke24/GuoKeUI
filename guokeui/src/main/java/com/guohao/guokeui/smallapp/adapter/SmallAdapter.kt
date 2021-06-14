@@ -43,9 +43,11 @@ class SmallAdapter : RecyclerView.Adapter<SmallViewholder> {
 
             item.Name = item.Name + "1"
 
-            notifyItemChanged(position)// 配合 supportsChangeAnimations = false 也可以解决闪烁问题
+            notifyDataSetChanged() // 配合方法二的 StableIds，可以达到 notifyItemChanged 的效果
 
-            //notifyItemChanged(position,item.Name)
+            //notifyItemChanged(position)// 配合方法三的 supportsChangeAnimations = false 也可以解决闪烁问题
+
+            //notifyItemChanged(position,item.Name) // 配合方法一的 payloads
             // 第二个参数，会被封装到 MutableList<Any> 中，传递给 onBindViewHolder 函数
             // 但不一定要使用
         }
@@ -56,6 +58,8 @@ class SmallAdapter : RecyclerView.Adapter<SmallViewholder> {
     override fun getItemCount(): Int {
         return datas.size
     }
+
+
 
     override fun onBindViewHolder(
         holder: SmallViewholder,
@@ -96,7 +100,7 @@ class SmallAdapter : RecyclerView.Adapter<SmallViewholder> {
     }
 
     override fun getItemId(position: Int): Long {
-        return datas.get(position).Id!!.toLong()
+        return datas[position].Id!!.toLong()
     }
 }
 

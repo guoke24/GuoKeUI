@@ -37,7 +37,8 @@ import kotlinx.android.synthetic.main.activity_small_app_recycler_view.*
  * 方法二：setHasStableIds 法
  * adapter.setHasStableIds(true)
  * 重写 adapter 的 getItemId 函数
- * 无效，原因未明。扔物线的 Drakeet 博主，写过 Stable ID，是跟动画触发有关。
+ * 配合 adapter 的 notifyDataSetChanged() 函数，就能获得 notifyItemChanged 的效果，且不会有闪烁动画。
+ * 扔物线的 Drakeet 博主，写过 Stable ID，是跟动画触发有关。
  *
  * 方法三：禁用 change 动画
  * (rv_item_list.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
@@ -68,12 +69,12 @@ class SmallAppRecyclerViewActivity : AppCompatActivity() {
         datas.add(ItemModel(333,"小黄",20,false))
 
         val adapter = SmallAdapter(this,datas)
-        //adapter.setHasStableIds(true)
+        adapter.setHasStableIds(true)
         val layout = LinearLayoutManager(this)
         layout.orientation = RecyclerView.VERTICAL
         rv_item_list.layoutManager = layout
         rv_item_list.adapter = adapter
-        (rv_item_list.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        //(rv_item_list.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
     }
 
 }

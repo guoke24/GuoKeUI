@@ -2,6 +2,8 @@ package com.guohao.guokeui.smallapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.guohao.guokeui.R
@@ -25,6 +27,8 @@ class SmallAppRecyclerView3Activity : AppCompatActivity() {
     private fun initRecyclerView(){
         rv_item_list3.layoutManager = layout
         rv_item_list3.adapter = adapter
+
+        //DefaultItemAnimator
     }
 
 }
