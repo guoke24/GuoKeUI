@@ -41,11 +41,11 @@ public class ScalableImageView2 extends View {
     float offsetX;
     float offsetY;
     float originalOffsetX;
-    float originalOffsetY;
-    float smallScale;
-    float bigScale;
+    float originalOffsetY; // 为了让图片居中，不然图片的上边就会贴顶部
+    float smallScale; // 图片放缩的最小倍数
+    float bigScale;   // 图片放缩的最大倍数
     boolean big;
-    float currentScale = 0;
+    float currentScale = 0; // currentScale 就是图片放缩多少倍
     ObjectAnimator scalingAnimator;
 
     GestureDetector gestureDetector;
@@ -97,13 +97,14 @@ public class ScalableImageView2 extends View {
         originalOffsetY = (getHeight() - imageHeight) / 2;
 
         if (imageWidth / imageHeight > (float) getWidth() / getHeight()) {
-            smallScale = getWidth() / imageWidth;
-            bigScale = getHeight() / imageHeight * SCALE_OVER_FACTOR;
+            // 图片比View更扁，用宽做计算
+            smallScale = getWidth() / imageWidth;// 最小放缩到图片的宽跟控件的宽一致
+            bigScale = getHeight() / imageHeight * SCALE_OVER_FACTOR; // 最大放缩到图片的高是控件的2倍
         } else {
             smallScale = getHeight() / imageHeight;
             bigScale = getWidth() / imageWidth * SCALE_OVER_FACTOR;
         }
-        currentScale = smallScale;
+        currentScale = smallScale;//确定控件的尺寸时，当前放缩倍数就是最小值
         getScalingAnimator().setFloatValues(smallScale,bigScale);
     }
 
@@ -123,13 +124,17 @@ public class ScalableImageView2 extends View {
 
         // 缩小时，偏移量为 0，图片默认居中；
         // 放大时，偏移量不为 0，可拖动；
-        // scalingFraction 表示动画的进度，0f -> 1f，当放缩时，过渡比较自然；
+        // scalingFraction 表示动画的进度，0f -> 1f；
         float scalingFraction = (currentScale - smallScale)/(bigScale - smallScale);
 
+        // offsetX 偏移量跟动画的进度成正比，当放缩时，过渡比较自然。
         canvas.translate(offsetX * scalingFraction, offsetY * scalingFraction);
 
+        // 图片的放缩程度通过 currentScale 受到 ObjectAnimator 的控制
+        // 默认以控件的中心点作为放缩的中心，若有偏移，则放缩中心也会偏移
         canvas.scale(currentScale, currentScale, getWidth() / 2, getHeight() / 2);
 
+        // 图片默认居中
         canvas.translate(originalOffsetX, originalOffsetY);
 
         canvas.drawBitmap(bitmap, 0, 0, paint);
@@ -158,6 +163,7 @@ public class ScalableImageView2 extends View {
             return true;
         }
 
+        // 手指拖动
         // 这里的边界计算逻辑，都是遵循：放大后的拖动或滑动，边界不得有缝
         // distanceX、distanceY 的值是旧位置减去新位置得到的，而其他一般设计为新位置减去旧位置
         @Override
@@ -173,9 +179,12 @@ public class ScalableImageView2 extends View {
             return false;
         }
 
+        // 惯性滑动（手指离开后），传入的参数是速度
+        // 需要借助 scroller 的 fling 方法，计算速度和位移。
         @Override
         public boolean onFling(MotionEvent down, MotionEvent event, float velocityX, float velocityY) {
             if(big){
+                // offsetX，offsetY 作为其实位置，再给一个速度，就能计算随时间的变化了。
                 scroller.fling((int) offsetX, (int) offsetY, (int) velocityX, (int) velocityY,
                         (int) (getWidth() - imageWidth * bigScale) / 2   /*往左最多移这么多*/,
                         (int) (imageWidth * bigScale - getWidth()) / 2   /*往右最多移这么多*/,
@@ -188,6 +197,9 @@ public class ScalableImageView2 extends View {
     }
 
     // 偏移量修正
+    // 演绎：图片放大后，比屏幕大。
+    // 当往左拖动时，如果图片右边碰到屏幕右边，就不能再往左拖（左偏移量有最小值）。
+    // 修正就是在做这个事情，控制 offsetX 的最小值。
     private void fixOffsets(){
         offsetX = Math.min(offsetX, (imageWidth * bigScale - getWidth()) / 2);
         offsetX = Math.max(offsetX, - (imageWidth * bigScale - getWidth()) / 2);
@@ -228,8 +240,8 @@ public class ScalableImageView2 extends View {
     class FlingRunner implements Runnable {
         @Override
         public void run() {
-            if (scroller.computeScrollOffset()) {
-                offsetX = scroller.getCurrX();
+            if (scroller.computeScrollOffset()/*计算在继续，滑动继续*/) {
+                offsetX = scroller.getCurrX(); // 获取当前这一刻的位置，scroller 的 fling 方法传入了 偏移量
                 offsetY = scroller.getCurrY();
                 invalidate();
 
@@ -243,6 +255,8 @@ public class ScalableImageView2 extends View {
 
         @Override
         public boolean onScale(ScaleGestureDetector detector) {
+            // detector 的 getScaleFactor() 返回的是
+            // 以「前一个」为参照得到的方式比例
             float temp = currentScale * detector.getScaleFactor();
             if(temp <= bigScale && temp >= smallScale){
                 currentScale = temp;
@@ -258,6 +272,7 @@ public class ScalableImageView2 extends View {
 
         @Override
         public boolean onScaleBegin(ScaleGestureDetector detector) {
+            // 从点击的地方放缩！
             offsetX = (detector.getFocusX() - getWidth()/2) * (1 - bigScale/smallScale);
             offsetY = (detector.getFocusY() - getHeight()/2) * (1 - bigScale/smallScale);
             return true;
